@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<html ng-app="HomeApp">
+<head dir="rtl">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="درباره خدمات الکترونیک قضایی" />
+    <meta name="keywords" content="درباره خدمات الکترونیک قضایی" />
+    <title>درباره خدمات الکترونیک قضایی</title>
+    
+<link href="/cassette.axd/asset/Bundles/bootstrap/bootstrap-theme.min.css?c5aa09b52e6d7f4eb5bd69a9e9157884ef04d794" type="text/css" rel="stylesheet"/>
+<link href="/cassette.axd/asset/Bundles/judMain/judMain.min.css?ffd5e42501e674a5b02748bc82187a7270b0071d" type="text/css" rel="stylesheet"/>
+<link href="/cassette.axd/asset/Bundles/style.css?f85ea51a6e99e60cdced9d3cb752fae051b9f95c" type="text/css" rel="stylesheet"/>
+<link href="/cassette.axd/asset/Bundles/bootstrap/font-awesome.min.css?65c5d94b9a11f8a6a89c4a887923c75f91b205f4" type="text/css" rel="stylesheet"/>
+<link href="/cassette.axd/asset/Bundles/ngSweetAlert/sweet-alert.min.css?543abf569f82d891638b293e63ebcdb4ff7be629" type="text/css" rel="stylesheet"/>
+
+    
+<script src="/cassette.axd/asset/Bundles/jquery/jquery.min.js?2c313599da463c626b8473b677f4465fc279dacb" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular.min.js?b03167091357ab1871311a57f6600f1f8cea2a6a" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/judMain/judMain.min.js?d0a354cb1c81aed2c8a654256a580d015a5a454e" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular-resource.min.js?2ea490b6c4dfea5f114ba42a47f6a3569e37b566" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular-route.min.js?7fb06671afb1e1494491925f4014dd05990500e3" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular-animate.min.js?132b1d14e5c1651418083e3f1ba0ad9b99cf592b" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular-sanitize.min.js?bd8f0be3daaf7e51185cd526201f1aa44bece893" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular-cookies.min.js?d15fac9d15694dd8119aed66a93d103172309b80" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular-ui-bootstrap/angular-ui-bootstrap-tpls.min.js?72b8b4b90bbbc07493883608c4a7be8a4a273e95" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/bootstrap/bootstrap.min.js?6e548dc121181aeba4342634f95616950b84f49c" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/ngMask/ngMask.min.js?891ee151896cd82eb681801edf3764ca8162e7e6" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/ngFocus/focusIf.min.js?020e0ac5f5820e68dfc9b250ce2d61b12d91b800" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/lodash/lodash.min.js?fd65eee6f7dc6588dda0fb1291a2a18556be5ecd" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSCalculateCashRelief.js?7855445ab900385ef80c9ae2c66e6ae980c14579" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSCalculate.js?5c2573bd815d12b7e090d156ef1d8fee22056788" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSPetition.js?ef7fd04deb8c064f20ab5b3132502d1a77bd7e90" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSPetitionWorkFlowItem.js?d18fedb49ea8d7c3b481f0d31acf03939b40530a" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSPetitionStep.js?634a14deebbc50f9b8f34afd96e2a32d04c878af" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSPetitionType.js?feefe443f3c363f084b607e614698aaa0d56753b" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSCashPosData.js?72f395ec9ce9510a9c22946ba2c11032caee1503" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSCalculateCashRelief.js?7855445ab900385ef80c9ae2c66e6ae980c14579" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSCalculate.js?5c2573bd815d12b7e090d156ef1d8fee22056788" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/ngSweetAlert/sweetAlert.min.js?8a0b87abe48be9ff9d219e833d0ad35983717b19" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/ngSweetAlert/sweet-alert.min.js?383403dab08a75fc0d0534668437fefa0d619e87" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/Enumeration/EnmBill.js?db0984584f55cf8c513745261cfe976b91b95b14" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/Enumeration/EnmPetition.js?e8d242b533c3134117812a573965e38c1f353a4e" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/Enumeration/EnmPortal.js?438768e807202953968a14fc1be6621c728dc0ea" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/BaseInfo/BaseInfoBill.js?757133607ce21794b41063f18e5550a894adea5d" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/BaseInfo/BaseInfoPetition.js?22725c79064a58fab77b5e77f6eca2e89551670b" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/BaseInfo/BaseInfoPortal.js?3f91beb4536eb73d05f72c60086dd1918609c8d3" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Offices/OfficesModelBase.js?da39a3ee5e6b4b0d3255bfef95601890afd80709" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Offices/OfficesControllerBase.js?37d4435316a7de8383a87264d7ba7df9a359e5ad" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Offices/OfficesController.js?1b7562be77ad10ae7d93068294cc128861a8ddf3" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Offices/OfficesApp.js?f5409bcac068299d9a39aecd951ccc409a57e85a" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Home/HomeController.js?ed7e038206279e41bab005e52788c7ab7f3c49bc" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Home/HomeApp.js?79a7142f04cca969714ae2991b159b45870bf556" type="text/javascript"></script>
+
+</head>
+<body ng-controller="HomeController" class="background-cream">
+    <div class="progress-loading progress" ng-if="viewModel.loading" ng-cloak>
+        <div class="progress-bar progress-bar-striped progress-bar-animated active width-full"
+             style="background-color:{{viewModel.headerColor}}"
+             role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="no-display-print" ng-cloak>
+        <jud-alert />
+    </div>
+    <header>
+        <div style="background-color:{{viewModel.headerColor}}">
+            <div class="container">
+                <div class="row row-no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="row row-no-padding">
+                            <div class="col-md-6 col-sm-6 col-xs-10 pull-right text-center">
+                                <div class="font-judFont text-right color-white font-size-14 margin-top-10">
+                                    <img src="/Bundles/headPerson/images/logo.png" alt="درباره خدمات الکترونیک قضایی" />
+                                    <span class="padding-top-5">
+                                        درباره خدمات الکترونیک قضایی
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-2 pull-left margin-top-5">
+                                <div class="pull-left margin-top-10 cursor-pointer">
+                                    <a href="/" class="color-white">
+                                        <i class="fa fa-home font-size-25 color-white"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+<form name="frmAboutUs" id="frmAboutUs" class="form-horizontal page-start" role="form" novalidate jud-validator>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                درباره خدمات الکترونیک قضایی
+            </li>
+        </ol>
+    </nav>
+    <section class="container">
+        <div class="row row-no-padding">
+            <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1">
+                <div class="bg-light-default padding-10 border-radius-10 margin-top-20">
+                    <div class="triangle-up default"></div>
+                    <br />
+                    <br />
+                    <fieldset>
+                        <div class="row row-no-padding">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <accordion>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                                درباره خدمات الکترونیک قضایی
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            ارايه خدمات الكترونيك قضايي، از طرح‌های بزرگ و مهم دستگاه قضايي مي‌باشد كه مورد توجه و تاكيد مدیران عالی دستگاه قضایی است.
+                                            بي‌ ترديد اجراي اين طرح، گامي مهم در توسعه فناوري اطلاعات و ارتباطات در دستگاه قضايي و توسعه حكومت الكترونيك در كشور، به شمار مي‌آيد. امروزه آمادگی الکترونیک مردم و نیز ارتقای سطح دسترسی آنان به امکانات و تسهیلات فناوری اطلاعات و ارتباطات نسبت به گذشته، امکان کاهش مراجعات مردم به مراجع قضایی را تسهيل نموده است و آنها می توانند جهت طرح دعوا بدون مراجعه به محاکم یا دادسراها به صورت الکترونیکی و به دو طریق اقدام نمایند: 1- درگاه خدمات الکترونیکی:
+                                            در این روش مراجعه کننده پس از ورود به درگاه خدمات الکترونیک قضایی (به آدرس: www.adliran.ir) جهت ثبت دادخواست/شکواییه اقدام می¬نماید و پس از تکمیل اطلاعات مورد نظر کد رهگیری دریافت نموده و به نزدیکترین دفتر خدمات قضایی مراجعه می نماید و پس از احراز هویت ، ارائه مدارک و منضمات و پرداخت هزینه های مربوطه دادخواست یا شکواییه به مرجع صالح ارسال می گردد.
+                                            2- دفاتر خدمات الکترونیک قضایی: در این روش مراجعه کنندگان پس از انتخاب نزدیکترین دفتر خدمات قضایی با ارائه اطلاعات و مدارک مورد نیاز دادخواست/شکواییه خود را طرح می¬نمایند. متصدی دفتر، مدارک و اطلاعات مربوط را از شخص دریافت کرده و به طور مثال در بخش «ثبت دادخواست جدید»، اطلاعات مربوط به موضوع خواسته و بهای آن، مشخصات کامل خواهان، خوانده، وکیل/ نماینده (در صورت وجود)، متن دادخواست را ثبت می¬نماید. پس از وارد نمودن تمامی اطلاعات فوق¬الذکر و محاسبه هزینه دادرسی متصدی دفتر از دادخواست نهایی شده، چاپ تهیه نموده و به تایید شخص می-رساند و پس از پرداخت هزینه دادرسی به مرجع قضائی صالح رسیدگی کننده به دادخواست، ارسال می نماید. در این راستا در مرحله اول ارایه خدمات الکترونیک قضایی، خدمات الکترونیک قضایی زیر به تدریج از طریق این درگاه ارایه خواهد شد:
+                                        </p>
+                                        <ul class="line-height-35">
+                                            <li>
+                                                ارائه و پیگیری دادخواست
+                                            </li>
+                                            <li>
+                                                ارائه و پیگیری شکواییه
+                                            </li>
+                                            <li>
+                                                ارائه و پیگیری اظهارنامه
+                                            </li>
+                                            <li>
+                                                ارایه لایحه
+                                            </li>
+                                            <li>
+                                                ارایه مدارک و مستندات پرونده
+                                            </li>
+                                            <li>
+                                                اطلاع‌رسانی پرونده
+                                                <ul>
+                                                    <li>
+                                                        اطلاع از آخرین وضعیت پرونده
+                                                    </li>
+                                                    <li>
+                                                        رویت خلاصه موضوعات پرونده
+                                                    </li>
+                                                    <li>
+                                                        مشاهده روندکار پرونده
+                                                    </li>
+                                                    <li>
+                                                        مشاهده ردیفهای فرعی پرونده
+                                                    </li>
+                                                    <li>
+                                                        رویت آخرین موضوع پرونده (عنوان خواسته / اتهام)
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                محاسبه هزینه دادرسی
+                                            </li>
+                                        </ul>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont  font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                                مراحل راه اندازی خدمات الکترونیک قضایی
+                                            </div>
+                                        </accordion-heading>
+                                        <accordion>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله اول
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی دو خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز19/4/1391 خدمات قضایی جدید شامل مطالبه وجه چک و اتهام صدور چک بلامحل به شهروندان ارائه خواهد شد.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله دوم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی چهار خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 14/11/1391 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از؛اعسار از پرداخت محکوم به، اعسار از پرداخت مهریه، مطالبه وجه سفته، درخواست صدور اجرائیه در مورد رای هیات حل اختلاف کارگر و کارفرما که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 6 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله سوم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی چهار خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز19/12/1391 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از؛مطالبه اجرت المثل ایام زوجیت، مطالبه نفقه، الزام به تمکین، تعدیل تقسیط مهریه که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 10 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله چهارم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی پنج خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 31/1/1392 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از؛اصلاح شناسنامه، ابطال شناسنامه، مطالبه دیه، تعدیل تقسیط محکوم به و مطالبه خسارت که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 15 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله پنجم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی چهارده خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 13/2/1392خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از؛؛طلاق توافقی، ملاقات فرزند، صدور گواهی عدم امکان سازش به درخواست زوج، طلاق به درخواست زوجه، مطالبه مهریه، حضانت، اثبات زوجیت، ثبت واقعه طلاق، ثبت واقعه ازدواج، درخواست صدور حکم رشد، اثبات نسب، استرداد جهیزیه، تجویز ازدواج مجدد، نفی نسب که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 29 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله ششم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی هفت خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 11/3/1392خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از:
+                                                    ؛تغییر نام،تخلیه،پرداخت حق الوکاله، استرداد ثمن معامله، تحویل پلاک خودرو، ابطال چک، استرداد لاشه چک که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 35 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله هفتم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی هفت خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 01/04/1392 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از؛
+                                                    قلع و قمع مستحدثات، تأیید فسخ قرارداد،رفع تصرف عدوانی، دستور فروش ملک مشاع، خلع ید، تسلیم مبیع(تحویل مورد معامله) مالی منقول، الزام به تنظیم سند رسمی ملک، اثبات مالکیت(مالی غیر منقول)،اثبات مالکیت (مالی)، ابطال سند رسمی (موضوع سند ملک است)، استرداد مال (منقول) ، حجر که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 47 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله هشتم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی بیست وشش خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 07/08/1392 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از؛ابطال ثبت واقعه ازدواج، الزام به بذل مدت متعه، تقاضای تنفیذ طلاق، منع اشتغال زوجه/زوج(غیرمالی)، اثبات ابراء دین، ابطال ثبت واقعه طلاق، اذن در ازدواج، استرداد طفل، اهداء جنین، تحویل فرزند، درخواست سرپرستی طفل، رفع حجر، عزل ناظر، بطلان نکاح، تعدیل نفقه، ضم امین، عزل امین، عزل وصی از وصایت(غیر مالی)، فسخ نکاح، ثبت واقعه رجوع، تغییر جنسیت، لغو حضانت، تعيين امين اموال غايب مفقود الاثر، تعيين امين براي غير غايب، تعیین تاریخ/مدت ملاقات که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 72 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله نهم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی بیست و یک خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 28/08/1392 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از؛
+                                                    مطالبه اجرت المثل اموال، مطالبه اجور معوقه، مطالبه ارز خارجي، مطالبه حق الوكاله به درخواست وكيل، الزام به تحويل ملك معوض، الزام خوانده به تهیه مسکن جداگانه، تقسیم مال، مطالبه مابه التفاوت اجاره بها، ممانعت از خروج فرزند از كشور، درخواست نصب ناظر استصوابي، درخواست نصب ناظر اطلاعي، تنفيذ وصيت نامه، ابطال وصيت نامه، تسليم اموال غايب به ورثه، مطالبه سهم الارث، تعیین مدیر تصفیه، تقسیم ترکه، صدور اجازه خروج از کشور، صدور حکم موت فرضی، مطالبه بهای ثمنیه ترکه غیر منقول، ثبت واقعه ولادت که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 93 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله دهم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی بیست خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 12/09/1392 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از؛
+                                                    ابطال اظهارنامه تجارتي، ابطال صورتجلسه مجمع عمومي(غيرمالي)، ابطال صورتجلسه مجمع عمومي(مالي)، ابطال صورتجلسه هيات مديره (غيرمالي)، ابطال صورتجلسه هيات مديره(مالي)، اثبات شراكت، الزام به ثبت علامت تجارتي، انحلال شركت/موسسه، ، صدور حکم ورشكستگي، منع خوانده از توليد و استفاده علامت تجارتي مشابه علامت خواهان، اعاده اعتبار ورشكسته، ابطال ورقه اختراع، الزام به ثبت اختراع، الزام به انتقال سهم یا سهام شرکت و مطالبه سهم الشرکه که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 108خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله یازدهم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی بیست و دو خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 26/09/1392 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از؛
+                                                    تحویل اصل اسناد مالکیت(غیرمالی)، استرداد سند(مالی)، استرداد سند(غیرمالی)، تسلیط ید(وضع ید بر مال غیرمنقول/ملک)، تسلیط ید(وضع ید بر مال منقول)، الزام به ثبت تقسیم نامه، الزام به تنظیم سند خودرو، الزام به تنظیم سند رسمی امتیاز تلفن، الزام به تنظیم سند رسمی قایق، الزام به تنظیم سند رسمی کشتی، الزام به تنظیم سند رسمی موتورسیکلت، الزام به تنظیم سند لنج، اخذ به شفعه، تجویز انتقال منافع به غیر، فک پلمپ ، رفع اثر از اموال توقیفی غیر منقول ، رفع اثر از اموال توقیفی منقول ، ابطال اجاره نامه، ابطال مبایعه نامه(مالی)، ابطال مبایعه نامه(مالی غیرمنقول) و ابطال سند(موضوع سند مالی نیست) که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 129 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله دوازدهم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی هیجده خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 22/10/1392 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از؛ .
+                                                    اثبات وقوع بيع، الزام به تنظیم سند رسمی صلح سرقفلی، اعلام بطلان معامله، تایید اقاله، ابطال تقسیم نامه، درخواست صدور حکم تولیت، اعتراض به نظریه هیأت تحقیق اداره اوقاف، اثبات وقفیت، ابطال وقف نامه، الزام به انجام تعمیرات اساسی عین مستأجره، تعدیل اجاره بها، الزام به تنظیم سند رسمی اجاره، تنفیذ صلح نامه (اموال منقول)، الزام به فک رهن، تأیید رجوع از هبه، درخواست پرداخت دیه از بیت المال، اثبات حق انتفاع، اثبات حق ارتفاق که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 147 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله سیزدهم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی سیزده خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 6/11/1392 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از:
+                                                    اعتراض به عمليات اجرايي(موضوع مواد 146 و 147 قانون اجراي احكام مدني )، ابطال اجرائيه (موضوع اجراييه غير مالي است)، ابطال اجرائيه (موضوع اجراييه مالي است)، درخواست سازش، ابطال رای کمیسیون ماده 12مبنی بر ابطال سند مالکیت، ابطال رای هیات حل اختلاف وزارت کار و امور اجتماعی، ابطال گزارش اصلاحی، ابطال نظریه کمیسیون ماده 2، اعتراض به تحديد حدود، اعتراض به ثبت، ابطال سند ( موضوع سند مالی است)، تشخيص تاريخ اسناد عادي، الزام به تفکیک ملککه با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 160 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله چهاردهم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی شانزده خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 20/11/1392 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از:
+                                                    اعتراض به راي قاضي هيات حل اختلاف قانون تعيين تكليف اختلافات اراضي موضوع اجراي ماده 56 قانون جنگلها و مراتع، نزع اشجار ، نسق زارعانه، محروميت از دريافت خدمات دولتي-آب-برق-گاز-قانون تملك آپارتمانها، اعتراض به رای کمیسیون ماده 17 قانون اصلاح بیمه اجباری مسوولیت مدنی دارندگان وسایل نقلیه، تصحيح و اصلاح صورتمجلس تفكيكي، الزام به اخذ پايان كار، الزام به اخذ صورتمجلس تفکيکي، الزام به تعمیر ساختمان مشاعی، ابطال رأي داور (غيرمالي)، ابطال رأي داور (مالي)، درخواست ابلاغ راي داور، درخواست اجراي راي داور، درخواست تعيين داور، رفع ممانعت از حق، رفع مزاحمت که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 176 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        مرحله پانزدهم
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی سیزده خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از امروز 11/12/1392 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات عبارتند از:
+                                                    ابطال صورت جلسه افزایش سرمایه، تأمین خواسته، دستور موقت، اخراج ثلث، ابطال ثبت واقعه فوت، ابطال قبض آب، ابطال قبض برق، ابطال قبض گاز، ابطال قبض تلفن، ابطال ثبت و سلب تابعیت کشتی، تأیید رجوع از اذن، اثبات سیادت، تسلیم مبیع ( تحویل مورد معامله) مالی غیر منقول که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 189 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                            <accordion-group>
+                                                <accordion-heading>
+                                                    <div class="font-judFont  font-size-12 color-gray font-size-11 cursor-pointer">
+                                                        <i class="glyphicon glyphicon-arrow-left"></i>
+                                                        خواسته های جدید
+                                                    </div>
+                                                </accordion-heading>
+                                                <p class="font-judFont  font-size-12 line-height-35">
+                                                    مرکز آمار و فناوری اطلاعات قوه قضاییه در راستای توسعه طرح خدمات الکترونیکی قضایی اقدام به راه اندازی یازده خدمت قضایی جدید نموده است.
+                                                    حجت الاسلام والمسلمین دکتر حمید شهریاری معاون رئیس قوه قضاییه و رئیس مرکز آمار و فناوری اطلاعات اظهار داشتند از تاریخ 27/10/1393 خدمات قضایی جدید به شهروندان ارائه خواهد شد.
+                                                    دکتر شهریاری افزودند این خدمات شامل خواسته های:
+                                                    تجدید نظرخواهی، تأیید انفساخ قرارداد، الزام به تحویل اسناد و مدارک، اعتراض به تشخیص ملی شدن اراضی موضوع تبصره 1 ماده 9 قانون افزایش بهره وری بخش کشاورزی، اعتراض به تصمیم واحد ثبتی، افراز ملک، مطالبه ارش البکاره، اعتراض به عملیات ثبتی، اعتراض به دستور تخلیه، اعتراض به رأی مرجع اختصاصی غیردولتی، اثبات رجوع از بذل مهریه می باشد که با افزودن آنها، تعداد خدمات ارائه شده در دفاتر خدمات الکترونیکی قضایی شهر تهران به 207 خدمت افزایش خواهد یافت.
+                                                </p>
+                                            </accordion-group>
+                                        </accordion>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont  font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                                توسعه در استانها
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont  font-size-12 line-height-35">
+                                            در حال حاضر بیش از 207 عنوان خواسته بدوی در 21 مرکز استان‌ از طریق دفاتر خدمات الکترونیک قضایی نیز قابل دریافت می‌باشد. پس از طی مراحل آزمایشی در مراکز استان‌ها و آمادگی زیرساخت‌‌های فن‌آوری و هماهنگی‌های بعمل آمده در دادگستری‌ها از تاریخ 14 شهریور 1394 در استان‌های آذربایجان شرقی، آذربایجان غربی، اصفهان، البرز، بوشهر، خراسان رضوی، خراسان شمالی، خوزستان، سمنان، سیستان و بلوچستان، فارس، قم، کردستان، کرمان، کرمانشاه، کهکیلویه و بویر احمد، گلستان، گیلان، لرستان، مازندران و هرمزگان این خواسته‌ها تنها از طریق دفاتر مذکور قابل طرح خواهد بود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont  font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                                آیین نامه ارائه خدمات الکترونیک قضایی
+                                            </div>
+                                        </accordion-heading>
+                                        <ul class="list-style-none">
+                                            <li>
+                                                <a href="http://sakha.adliran.ir/About/nameh.tif" target="_blank">
+                                                    <i class="glyphicon glyphicon-download"></i>
+                                                    دانلود آیین نامه ارائه خدمات الکترونیک قضایی
+                                                </a>
+                                            </li>
+                                            <li class="margin-top-10">
+                                                <a href="http://sakha.adliran.ir/About/001.tiff" target="_blank">
+                                                    <i class="glyphicon glyphicon-download"></i>
+                                                    دانلود آیین نامه تاسیس دفاتر خدمات الکترونیک قضایی
+                                                </a>
+                                            </li>
+                                            <li class="margin-top-10">
+                                                <a href="/Content/JSSHelp/AeenEgraei.pdf" target="_blank">
+                                                    <i class="glyphicon glyphicon-download"></i>
+                                                    دانلود آيين نامه اجرايي ايجاد دفاتر خدمات الكترونيك قضايي و كانون هاي آنها
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </accordion-group>
+                                </accordion>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+</body>
+</html>

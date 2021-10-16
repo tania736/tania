@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body dir="rtl">
+        <link href="/cassette.axd/asset/Bundles/bootstrap/bootstrap-theme.min.css?c5aa09b52e6d7f4eb5bd69a9e9157884ef04d794" type="text/css" rel="stylesheet"/>
+        <link href="/cassette.axd/asset/Bundles/judMain/judMain.min.css?ffd5e42501e674a5b02748bc82187a7270b0071d" type="text/css" rel="stylesheet"/>
+        <link href="/cassette.axd/asset/Bundles/style.css?f85ea51a6e99e60cdced9d3cb752fae051b9f95c" type="text/css" rel="stylesheet"/>
+        <link href="/cassette.axd/asset/Bundles/bootstrap/font-awesome.min.css?65c5d94b9a11f8a6a89c4a887923c75f91b205f4" type="text/css" rel="stylesheet"/>
+        <link href="/cassette.axd/asset/Bundles/ngSweetAlert/sweet-alert.min.css?543abf569f82d891638b293e63ebcdb4ff7be629" type="text/css" rel="stylesheet"/>
+        
+            
+        <script src="/cassette.axd/asset/Bundles/jquery/jquery.min.js?2c313599da463c626b8473b677f4465fc279dacb" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/angular/angular.min.js?b03167091357ab1871311a57f6600f1f8cea2a6a" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/judMain/judMain.min.js?d0a354cb1c81aed2c8a654256a580d015a5a454e" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/angular/angular-resource.min.js?2ea490b6c4dfea5f114ba42a47f6a3569e37b566" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/angular/angular-route.min.js?7fb06671afb1e1494491925f4014dd05990500e3" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/angular/angular-animate.min.js?132b1d14e5c1651418083e3f1ba0ad9b99cf592b" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/angular/angular-sanitize.min.js?bd8f0be3daaf7e51185cd526201f1aa44bece893" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/angular/angular-cookies.min.js?d15fac9d15694dd8119aed66a93d103172309b80" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/angular-ui-bootstrap/angular-ui-bootstrap-tpls.min.js?72b8b4b90bbbc07493883608c4a7be8a4a273e95" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/bootstrap/bootstrap.min.js?6e548dc121181aeba4342634f95616950b84f49c" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/ngMask/ngMask.min.js?891ee151896cd82eb681801edf3764ca8162e7e6" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/ngFocus/focusIf.min.js?020e0ac5f5820e68dfc9b250ce2d61b12d91b800" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/lodash/lodash.min.js?fd65eee6f7dc6588dda0fb1291a2a18556be5ecd" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSCalculateCashRelief.js?7855445ab900385ef80c9ae2c66e6ae980c14579" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSCalculate.js?5c2573bd815d12b7e090d156ef1d8fee22056788" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSPetition.js?ef7fd04deb8c064f20ab5b3132502d1a77bd7e90" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSPetitionWorkFlowItem.js?d18fedb49ea8d7c3b481f0d31acf03939b40530a" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSPetitionStep.js?634a14deebbc50f9b8f34afd96e2a32d04c878af" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSPetitionType.js?feefe443f3c363f084b607e614698aaa0d56753b" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSCashPosData.js?72f395ec9ce9510a9c22946ba2c11032caee1503" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSCalculateCashRelief.js?7855445ab900385ef80c9ae2c66e6ae980c14579" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/JSSPetition/JSSCalculate.js?5c2573bd815d12b7e090d156ef1d8fee22056788" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/ngSweetAlert/sweetAlert.min.js?8a0b87abe48be9ff9d219e833d0ad35983717b19" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Bundles/ngSweetAlert/sweet-alert.min.js?383403dab08a75fc0d0534668437fefa0d619e87" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/Enumeration/EnmBill.js?db0984584f55cf8c513745261cfe976b91b95b14" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/Enumeration/EnmPetition.js?e8d242b533c3134117812a573965e38c1f353a4e" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/Enumeration/EnmPortal.js?438768e807202953968a14fc1be6621c728dc0ea" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/BaseInfo/BaseInfoBill.js?757133607ce21794b41063f18e5550a894adea5d" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/BaseInfo/BaseInfoPetition.js?22725c79064a58fab77b5e77f6eca2e89551670b" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Domain/BaseInfo/BaseInfoPortal.js?3f91beb4536eb73d05f72c60086dd1918609c8d3" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Offices/OfficesModelBase.js?da39a3ee5e6b4b0d3255bfef95601890afd80709" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Offices/OfficesControllerBase.js?37d4435316a7de8383a87264d7ba7df9a359e5ad" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Offices/OfficesController.js?1b7562be77ad10ae7d93068294cc128861a8ddf3" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Offices/OfficesApp.js?f5409bcac068299d9a39aecd951ccc409a57e85a" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Home/HomeController.js?ed7e038206279e41bab005e52788c7ab7f3c49bc" type="text/javascript"></script>
+        <script src="/cassette.axd/asset/Scripts/Home/HomeApp.js?79a7142f04cca969714ae2991b159b45870bf556" type="text/javascript"></script>
+        
+        </head>
+        <body ng-controller="HomeController" class="background-cream">
+            <div class="progress-loading progress" ng-if="viewModel.loading" ng-cloak>
+                <div class="progress-bar progress-bar-striped progress-bar-animated active width-full"
+                     style="background-color:{{viewModel.headerColor}}"
+                     role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="no-display-print" ng-cloak>
+                <jud-alert />
+            </div>
+            <header>
+                <div style="background-color:{{viewModel.headerColor}}">
+                    <div class="container">
+                        <div class="row row-no-padding">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="row row-no-padding">
+                                    <div class="col-md-6 col-sm-6 col-xs-10 pull-right text-center">
+                                        <div class="font-judFont text-right color-white font-size-14 margin-top-10">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-2 pull-left margin-top-5">
+                                        <div class="pull-left margin-top-10 cursor-pointer">
+                                            <a href="/" class="color-white">
+                                                <i class="fa fa-home font-size-25 color-white"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+        
+            <section class="container">
+                <div class="row row-no-padding">
+                    <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1">
+                        <div class="bg-light-default padding-10 border-radius-10 margin-top-20">
+                            <div class="triangle-up default"></div>
+                            <br />
+                            <br />
+                            <fieldset>
+                                <accordion>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                دادخواست مطالبه وجه حواله های صادره عهده صندوق های قرض الحسنه تحت چه عنوان قابل طرح است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            با توجه به رویه جاری اینگونه اوراق بعنوان چک شناخته نمی شود لذا دعوی مطروحه در قالب مطالبه وجه چک قابل ثبت نبوده و می بایست بعنوان دعوای مطالبه طلب اقدام شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                برای درخواست صدور اجراییه هیات حل اختلاف بین کارگر و کارفرما چه مدرکی باید تقدیم گردد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            رای هیات تشخیص، نامه اداره کار و گواهی ابلاغ رای از موارد الزامی است و در صورت وجود ادلة دیگر باید در قسمت سایر ضمائم درج شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                خوانده دعوای پرداخت دیه از بیت المال چه کسی می باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            خوانده این دعوا وزارت دادگستری و یا صندوق تامین خسارات بدنی موضوع ماده 10 قانون بیمه اجباری می باشد که در هر صورت باید به مجتمع بهشتی ارسال گردد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                برای مطالبه دیه چه مدارکی نیاز است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            تصویر دادنامه مبنی بر محکومیت ،نظریه پزشکی قانونی،گزارش کلانتری و در صورت عدم وجود این دلایل قسمت منضمات جهت تعیین کارشناس تکمیل گردد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                برای ابطال شناسنامه چه مدارکی لازم است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            تصویر مصدق دادنامه(اختیاری) تصویرمصدق شناسنامه(اجباری) تصویر مصدق استشهادیه محلی(اختیاری)
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                خوانده دعوای ابطال و اصلاح شناسنامه چه کسی می باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            اداره ی ثبت احوال محل صدور شناسنامه. در صورتی که محل صدور شناسنامه خارج از شهر تهران باشد در قسمت خوانده نشانی شهرستان مورد نظر قید می شود. در این حالت بر اساس محل اقامت خواهان تعیین صلاحیت انجام می پذیرد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                شخصی دادخواست نفقه دارد و بهای آن زیر 5 میلیون تومان است، همچنین پرونده خانوادگی دیگری در دادگاه دیگر دارد، آیا می تواند این دو پرونده را تجمیع کند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            نمی تواند تجمیع کند، و اگر بهای خواسته زیر 5 میلیون ریال است در صلاحیت شورای حل اختلاف است.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                زوج در عقدنامه به زوجه وکالت در توکیل داده است تا هر زمانی که مایل بود خود را مطلقه کند، آیا این مورد جزء طلاق توافقی است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            باید دادخواست طلاق به درخواست زوجه ارائه گردد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا پدربزرگ یا جدپدری می تواند دادخواست ملاقات با فرزند بدهد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            بله، طبق ماده 29 قانون حمایت خانواده دادگاه باید با توجه به وابستگی عاطفی و مصلحت طفل، ترتیب، زمان و مکان ملاقات وی با پدر و مادر و سایر بستگان را تعیین کند.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا مادر زوجه در فرض وفات دخترش می تواند دادخواست استرداد جهیزیه و مهریه را دهد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            به عنوان یکی از وراث متوفی بعد از گرفتن گواهی حصر وراثت می تواند طرح دعوا کند.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا در دعوای الزام به تمکین، خواهان می تواند بر اساس آدرس خود طرح دعوا کند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            خیر، باید بر اساس آدرس خوانده طرح دعوا کند
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا برای طلاق توافقی دو طرف باید حضور داشته باشند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            یا هر دو باید حضور داشته باشند یا یک طرف به همراه وکیل طرف دیگر یا وکلای طرفین باید حضور داشته باشند
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا کسی که به سن رشد نرسیده می تواند برای خود وکیل بگیرد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            در امور غیرمالی که راساً می تواند دخالت کند، می تواند وکیل هم بگیرد اما در امور مالی ولی یا قیم او باید برایش وکیل بگیرد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                اگر مردی بخواهد دعوی نفی نسب مطرح کند چگونه باید اقدام کند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            دعوی باید به طرفیت فرزندی که ادعای طرد از آن خانواده می شود و همسر اقامه شود. در صورتی که فرزند محجور باشد باید برای دفاع حقوق فرزند برای او قیم اتفاقی تعیین نمود و دادخواست را علیه فرزند به عنوان خوانده و قیم به عنوان نماینده تقدیم کرد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا شخصی که حکم اعسارش را گرفته است می تواند علاوه بر درخواست تعدیل تقسیط مهریه درخواست کم کردن میزان مهریه را نیز داشته باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            خیر، میزان مهریه قابل کم یا زیاد شدن نیست. لکن درخواست تعدیل تقسیط مهریه در مورد کم یا زیاد شدن اقساط پرداخت مهریه است.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                چه کسانی می توانند تقاضای صدور حکم رشد بدهند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            محجور، نماینده قانونی یا وکیل آن ها می توانند تقاضای صدور حکم رشد بدهند.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                چه اشخاصی می توانند تقاضای اثبات نسب بدهند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            افرادی که با یکدیگر رابطه نسبی دارند مانند: فرزند، پدر، مادر، خواهر، و برادر یا نماینده قانونی آن ها.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                منظور از سند ازدواج عادی چیست؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            یعنی ازدواجی که سند آن در دفترخانه ازدواج ثبت نشده است و بین طرفین است.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا می توان در ابتدا درخواست تعدیل تقسیط را مطرح کرد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            خیر، درابتدا باید درخواست اعسار را مطرح کرد و سپس بعد از تعیین تکلیف راجع به آن مجدداً درخواست تعدیل تقسیط را مطرح کرد
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا در مورد مطالبه نفقه فرزند، مادر می تواند به عنوان خواهان باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            فرزند خواهان است و مادر به نمایندگی از او باید دادخواست مطالبه نفقه بدهد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا در ثبت دادخواست «اثبات زوجیت» سند ازدواج به عنوان دلیل باید ارائه گردد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            خیر، سند ازدواج اجباری نیست. لیکن مدرک مثبته جهت اثبات موضوع باید ارائه شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا بعد از طلاق نیز می توان دعوای مطالبه مهریه را مطرح نمود؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            بله، اگر توافقی درباره مهریه صورت نگرفته باشد، می توان اقدام به طلب مهریه نمود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                در دعوای مطالبه نفقه مبلغ را چگونه محاسبه میکنند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            خود خواهان مشخص می کند.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا می توان برای تعیین مبلغ نفقه درخواست کارشناس دهند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            بله دادگاه می تواند کارشناس تعیین کند.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا ارائه شناسنامه به عنوان دلیل برای ثبت دادخواست مطالبه نفقه اختیاری است یا اجباری؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            ارائه شناسنامه به عنوان دلیل برای ثبت دادخواست مطالبه نفقه اجباری است.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                دعوای الزام به تمکین دعوای مالی است یا غیرمالی؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            این دعوا غیر مالی است.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا بعد از صدور حکم طلاق همچنان امکان درخواست اجرت المثل وجود دارد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            بله بعد از صدور حکم طلاق نیز می توان درخواست اجرت المثل ایام زوجیت را مطرح کرد و محدودیتی وجود ندارد
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                در دعوای عدم امکان سازش اگر سند ازدواج مفقود شده یا در دسترس نباشد شخص چگونه می تواند دادخواست بدهد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            با مراجعه به دفتر ازدواجی که نکاح را ثبت نموده از آن رونوشت تهیه نماید.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا در ابطال شناسنامه ارائه دادنامه به عنوان دلیل و منضمات برای ثبت دادخواست اجباری است یا اختیاری؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            ارائه این دلیل اختیاری است.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                در دادخواست صدور حکم رشد خوانده چه کسی است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            این دادخواست خوانده ندارد و به طرفیت دادستان نوشته می شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا مطالبه خسارت تأخیر تأدیه مستلزم پرداخت هزینه دادرسی می باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            چنانچه مطالبه خسارت تأخیر تأدیه ضمن دعوای مطالبه وجه مطرح شده باشد با توجه به اینکه از متفرعات و توابع دعوای اصلی می باشد در رویه جاری هزینه مستقلی در زمان تقدیم دادخواست اخذ نمی شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا برای دعاوی غیر مالی نیز می توان درخواست هزینه دادرسی مطرح کرد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            بله، امکان درخواست مطالبه هزینه دادرسی برای دعاوی غیر مالی نیز امکان پذیر است اما مبلغ آن کم می باشد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا در دعوی تعدیل تقسیط حتما خود شخص باید حضور داشته باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            در دعوی تعدیل تقسیط مهریه، زوج یا زوجه یا نماینده قانونی آن ها باید باشند. در دعوی تعدیل تقسیط محکوم به، محکوم علیه مدیون یا نماینده قانونی وی باید باشد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا هزینه دادرسی وصول شده نیاز به تصدیق دفتر خدمات قضایی دارد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            با توجه به اینکه اطلاعات مربوط به دریافت وجه به صورت الکترونیکی در سیستم ثبت می شود و نظر به بند ج ماده 48 قانون برنامه پنجم توسعه جمهوری اسلامی ایران که مبادله الکترونیکی وجه تجویز شده است کفایت می نماید.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا در صورت رد دادخواست اعسار از پرداخت مهریه، می توان دوباره دادخواست داد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            بله، با توجه به اینکه معسر بودن و عدم تمکن مالی می تواند هر زمان به وجودآید، رد دعوی اعسار قبلی مانع از طرح دادخواست اعسار جدید نخواهد شد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا شخصی که در زندان است بستگانش می توانند دادخواست اعسار بدهند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            خیر، خود شخص یا وکیل رسمی او باید دادخواست بدهد. در مطالبه دیه زمانی که دیه به عهده عاقله است او باید دادخواست اعسار به طرفیت اولیای دم بدهد تا در صورت ثبوت اعسار عاقله، حکم به پرداخت دیه از بیت المال صادر شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                در صورتی که مهریه سکه باشد هزینه دارسی چگونه محاسبه می شود؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            هزینه دارسی طبق مبلغی است که خواهان مقوم می کند، مگر این که درخواست کارشناسی داده باشد که در این صورت طبق نظر کارشناس است.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا خسارات دادرسی در هر صورت محاسبه می شود؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            خیر فقط در صورت درخواست خواهان خسارت دادرسی محاسبه می گردد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                اگر خواهان آدرس خوانده را نداشته باشد به چه صورت می بایست آدرس را اعلام کرد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            آدرس خوانده را مجهول المکان و یا بر اساس آخرین محل اقامت خوانده اعلام میکنیم.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                خسارت دادرسی شامل چه مواردی می شود؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            بنابر قانون، خسارات دادرسی شامل حق الوکاله وکیل، هزینه دادرسی، هزینه کارشناسی و هزینه تحقیقات محلی می باشد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                هرگاه مبلغ چک پول خارجی باشد خواهان می تواند مبلغ خواسته را به پنج میلیون تقویم کند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            خیر، پول خارجی می بایست بر اساس شاخصه های بانک مرکزی تقویم شود
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                هزینه دادرسی دعوای مطالبه وجه چک چقدر می باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            هزینه دادرسی دعوای مطالبه چک برابر آخرین تغییرات شامل پنجاه هزار ریال هزینه ورود دادخواست بعلاوه هزینه دعوا که تا مبلغ ده میلیون ریال یک و نیم درصد و نسبت به مازاد دو درصد می باشد،البته هزینه اوراق و تصدیق مستندات بطور جداگانه محاسبه و وصول می شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                هزینه شکایت کیفری صدور چک بلامحل چقدر می باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            برابر آئین نامه تعرفه خدمات قضایی مبلغ پنجاه هزار ریال بعنوان ورودی شکوائیه دریافت می شود، علاوه بر این مبلغ می بایست در مورد چک های تا مبلغ یک میلیون ریال معادل پانزده هزار ریال و نسبت به مازاد تا مبلغ ده میلیون ریال مبلغ چهل هزار ریال و در مورد چک های مازاد بر ده میلیون ریال یکصدو پنجاه هزار ریال دریافت شود. بعنوان مثال: چک به مبلغ یک میلیون ریال باید شصت هزار ریال هزینه دادرسی وصول شود چک به مبلغ ده میلیون ریال باید یکصدو پنج هزار ریال هزینه دادرسی وصول شود چک به مبلغ ده میلیون و یک ریال و بیشتر باید دویست هزار ریال هزینه دادرسی وصول شود البته هزینه اوراق و تصدیق مستندات بطور جداگانه محاسبه و وصول می گردد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا می توان در دادخواست برای خوانده دو نشانی تعیین کرد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            با توجه به اینکه ابلاغ اوراق فقط در یک نشانی انجام می شود قید دو محل بعنوان اقامتگاه خوانده موجب توقیف دادخواست و صدور اخطار رفع نقص می شود لذا از قید دو اقامتگاه خودداری شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا می توان برای خوانده دعوا اقامتگاه دیگری غیر از نشانی بانک تعیین کرد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            با توجه به اینکه تعیین نشانی و محل اقامت خوانده به عهده خواهان می باشد این اختیار را دارد که محل اقامت را غیر از نشانی بانکی تعیین نماید،بدیهی است ابلاغ اوراق می بایست در نشانی اعلامی انجام شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                دارنده چک می خواهد علیه صادرکننده ای که فوت کرده است، دادخواست دهد و وکیل دارنده، گواهی انحصار وراثت دارد و ورثه آن 6 نفر هستند. حال باید در قسمت خوانده نام چه کسی را قرار داد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            در این مورد ورثه درواقع جانشین و قائم مقام شخص فوت شده است و چون اموال متوفی طبق قواعد ارث در مالکیت ورثه قرار می گیرد. لذا در این مورد باید نام ورثه ها را آورده و گواهی انحصار وراثت را نیز ضمیمه مدارک نماید.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                مرجع صالح در دادخواست ملاقات با فرزند چه دادگاهی است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            دادگاه خانواده محل اقامت خوانده صالح به رسیدگی می باشد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                در صورتی که در دعوای چک خواندگان متعدد باشند دادگاه صالح چه دادگاهی است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            مطابق ماده 16 قانون آئین دادرسی مدنی در صورتی که خواندگان در حوزه های قضایی مختلف اقامت داشته باشند، می توان به هر یک از دادگاه های حوزه های یاد شده مراجعه کرد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                مر جع ذی صلاح برای مطالبه خسارت بر چه اساسی تعیین می گردد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            اگر مطالبه خسارت برمبنای قرارداد فی ما بین باشد مرجع صالح دادگاهی است که قرارداد در حوزه آن واقع شده است یا تعهد می بایست در آنجا انجام شود و در غیراینصورت طبق ماده 11 قانون آیین دادرسی مدنی دادگاهی است که خوانده در حوزه آن اقامت دارد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                مطالبه دیه زیر مبلغ 5 میلیون تومان در صلاحیت چه مرجعی می باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            چون خواسته ها ی مالی تا مبلغ 50 میلیون ریال در صلاحیت شورای حل اختلاف می باشد. مطالبه دیه زیر این مبلغ نیز در صلاحیت شورا می باشد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                اگر خوانده در زندان باشد، دادخواست باید به کدام نشانی ارسال و ابلاغ گردد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            در این مورد چون دادخواست باید به دست خود شخص برسد، در صورتی که وکیل نداشته باشد، باید به آدرس زندان فرستاده شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                اگر خوانده مجهول المکان باشد، کدام مرجع صالح به رسیدگی است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            دادگاه محل اقامت خواهان صالح به رسیدگی می باشد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                برای توقیف اموال زوج، زوجه به کدام مرجع می تواند مراجعه کند؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            زوجه هم از طریق دادگاه و هم از طریق اجرای ثبت می تواند اقدام نماید.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                آیا مرجع صالح جهت رسیدگی به دعاوی مربوط به شهرداری فقط دادسرای ناحیه هفت می باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            کلیه عناوین مرتبط به شهرداری به دادسرای ناحیه 7 ارسال می گردد و کلیه موارد مرتبط با نیروی انتظامی به ناحیه 32 ارسال می گردد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                در دادخواست اعسار آدرس صادر کننده و بانک محال علیه هر دو در شهرستان است ولی ضامن در تهران سکونت دارد آیا می توان در تهران طرح دعوی کرد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            خیر، مرجع قضایی صالح در دادخواست مطالبه وجه چک بر اساس محل صدور چک، محل استقرار بانک محال علیه و محل اقامت خوانده تعیین می­شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                کدام مرجع صالح به رسیدگی در دعاوی خانوادگی مطرح شده از سوی خانواده شهدا است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            دادگاه خانواده شهدا صالح به رسیدگی می باشد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                در دعوی اعسار از پرداخت محکوم به که دادنامه تجدیدنظر دارد مرجع صالح برای رسیدگی کجاست؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            طبق ماده 20 قانون اعسار، مرجع رسیدگی به دعوی اعسار در مورد محکوم به، محکمه ای است که بدایتاً به دعوی اصلی رسیدگی کرده است.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                اگر صادرکننده چک فرد نظامی باشد، مرجع صالح برای رسیدگی به جرم صدور چک بلا محل کدام دادگاه است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            چون عمل فرد ، صدرور چک بوده و جزء اعمال نظامی نمی باشد، پس مرجع صالح به رسیدگی دادگاه عمومی است.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                دادخواست صدور اجراییه به کدام دادگاه ارسال می شود؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            صدور اجراییه به همان دادگاه صادرکننده حکم که درخواست صدور اجراییه برای آن شده است، ارسال می شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                مرجع صالح برای طرح درخواست اعسار کدام دادگاه است؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            دادگاه صادرکننده حکم،صلاحیت رسیدگی به درخواست اعسار را دارد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                کدام مرجع برای رسیدگی به دعوای ضررو زیان ناشی از جرم صالح می باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            دادخواست ضرر و زیان ناشی از جرم به دادگاه رسیدگی کننده به جرم اصلی ارسال می شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                در خصوص درخواست ابطال شناسنامه اگر محل اقامت خواهان تهران باشد ولی محل اقامت خوانده شهرستان باشد مبنای صلاحیت بر چه اساسی می باشد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            مبنای صلاحیت محل اقامت خواهان می باشد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                در صورتی که در مطالبه نفقه خوانده مجهول المکان باشد آیا می توان بر اساس آدرس خواهان دادگاه را تعیین کرد؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            بله، بر اساس ماده 12 قانون حمایت خانواده در دعاوی و امور خانوادگی مربوط به زوجین، زوجه می تواند در دادگاه محل اقامت خوانده یا محل سکونت خود اقامه دعوی کند مگر در موردی که خواسته، مطالبه مهریه غیرمنقول باشد.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                شکایت کیفری چک در حوزه های بخش که فاقد دادسرا می باشد باید به کدام مرجع ارسال شود؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            در حوزه های بخش که فاقد دادسرا می باشد شکایات و دعاوی ابتداً در دادگاه عمومی بخش مطرح می شود.
+                                        </p>
+                                    </accordion-group>
+                                    <accordion-group panel-class="panel-default">
+                                        <accordion-heading>
+                                            <div class="font-judFont font-size-12  cursor-pointer">
+                                                <i class="glyphicon glyphicon-question-sign"></i>
+                                                شکایت کیفری چک هایی که مبلغ آن تا پنجاه میلیون ریال است به کدام مرجع تقدیم می شود؟
+                                            </div>
+                                        </accordion-heading>
+                                        <p class="font-judFont font-size-12 line-height-35">
+                                            رسیدگی به شکایت کیفری راجع به صدور چک بلامحل صرف نظر از مبلغ آن به عهده مراجع قضایی دادگستری(دادسرا و دادگاههای عمومی) می باشد.
+                                        </p>
+                                    </accordion-group>
+                                </accordion>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+        
+        </body>
+        </html>

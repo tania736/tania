@@ -1,0 +1,732 @@
+
+
+<!DOCTYPE html>
+<html ng-app="LoginApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سامانه احراز هویت ثنا" />
+    <meta name="keywords" content="ثنا ، ثبت نام الکترونیک قضایی" />
+    <title>سامانه احراز هویت ثنا | Sana Authentication</title>
+    
+<link href="/cassette.axd/asset/Bundles/bootstrap/bootstrap-theme.min.css?c5aa09b52e6d7f4eb5bd69a9e9157884ef04d794" type="text/css" rel="stylesheet"/>
+<link href="/cassette.axd/asset/Bundles/judMain/judMain.min.css?c109fb93073549b4b777facb52e9a05c73542ea2" type="text/css" rel="stylesheet"/>
+<link href="/cassette.axd/asset/Bundles/style.min.css?1c8e3692924b7547e7a93b4e60a9ae4d655e43b8" type="text/css" rel="stylesheet"/>
+<link href="/cassette.axd/asset/Bundles/ngSweetAlert/sweet-alert.min.css?543abf569f82d891638b293e63ebcdb4ff7be629" type="text/css" rel="stylesheet"/>
+<link href="/cassette.axd/asset/Bundles/bootstrap/font-awesome.min.css?65c5d94b9a11f8a6a89c4a887923c75f91b205f4" type="text/css" rel="stylesheet"/>
+
+    
+<script src="/cassette.axd/asset/Bundles/jquery/jquery.min.js?2c313599da463c626b8473b677f4465fc279dacb" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular.min.js?b03167091357ab1871311a57f6600f1f8cea2a6a" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/judMain/judMain.min.js?e148cd1985bc8405b225d8554400ac1d84c1f813" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular-resource.min.js?2ea490b6c4dfea5f114ba42a47f6a3569e37b566" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular-route.min.js?7fb06671afb1e1494491925f4014dd05990500e3" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular-animate.min.js?132b1d14e5c1651418083e3f1ba0ad9b99cf592b" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular-sanitize.min.js?bd8f0be3daaf7e51185cd526201f1aa44bece893" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular/angular-cookies.min.js?d15fac9d15694dd8119aed66a93d103172309b80" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/angular-ui-bootstrap/angular-ui-bootstrap-tpls.min.js?72b8b4b90bbbc07493883608c4a7be8a4a273e95" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/bootstrap/bootstrap.min.js?6e548dc121181aeba4342634f95616950b84f49c" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/ngMask/ngMask.min.js?891ee151896cd82eb681801edf3764ca8162e7e6" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/ngFocus/focusIf.min.js?020e0ac5f5820e68dfc9b250ce2d61b12d91b800" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/lodash/lodash.min.js?fd65eee6f7dc6588dda0fb1291a2a18556be5ecd" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Login/LoginController.js?4bdae8ef87a0fd9f5dd9d1b6c5bb73752dec4f2d" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Login/LoginApp.js?ad456dcb7df1c69a284e627b2e7d863779d43428" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/ngDevice/re-tree.js?2d32e38648b1fcd55462175d55a999206712e653" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/ngMultiSelect/multiselect.js?8a92dbbfeaf4c471e3ae2de2acdf10ba4ea0b3ee" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/ngSweetAlert/sweetAlert.min.js?21ac15ba7dea616382b7f7cc61d4dfba0ae41fa9" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Bundles/ngSweetAlert/sweet-alert.min.js?383403dab08a75fc0d0534668437fefa0d619e87" type="text/javascript"></script>
+<script src="/cassette.axd/asset/Scripts/Domain/Enumeration/EnmPortal.js?a11698876ee46df3c44bb66135a1edb52e6669f0" type="text/javascript"></script>
+
+</head>
+<body ng-controller="LoginController" ng-csp="no-unsafe-eval;no-inline-style" class="background-cream">   
+    <div class="no-display-print" ng-cloak>
+        <jud-alert />
+    </div>
+    <header>
+        <div style="background-color:{{viewModel.headerColor}}">
+            <div class="container">
+                <div class="row row-no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="row row-no-padding">
+                            <div class="col-md-6 col-sm-6 hidden-xs pull-right text-center">
+                                <div class="font-judFont text-right color-white font-size-14 margin-top-10">
+                                    <img src="/Bundles/headPerson/images/logo.png" alt="{{viewModel.loginTitle}}" />
+                                    <span class="padding-top-5">
+                                        {{viewModel.loginTitle}}
+                                        <span ng-if="viewModel.messageUrl!=null && viewModel.messageUrl!=''">
+                                            -
+                                            {{viewModel.messageUrl}}
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 pull-left margin-top-5">
+                                <div class="pull-left margin-top-10 cursor-pointer">
+                                    <a href="/" class="color-white">
+                                        <i class="fa fa-home font-size-25 color-white"></i>
+                                    </a>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+<form name="frmAuthenticate" id="frmAuthenticate" class="form-horizontal" role="form" ng-keypress="actions.preventEnterKey($event,1)" novalidate jud-validator ng-if="viewModel.loginStep==1">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                ورود به {{viewModel.loginTitle}} - مرحله ی اول
+            </li>
+        </ol>
+    </nav>
+    <section class="container login-effect">
+        <div class="row row-no-padding">
+            <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1">
+                <div class="bg-light-default padding-10 border-radius-10 margin-top-15">
+                    <div class="triangle-up default"></div>
+                    <br />
+                    <br />
+                    <div class="col-md-2 col-sm-2 col-xs-12 pull-right" ng-if="viewModel.isSelectNaturalPerson">
+                        <input type="radio" id="rdbNaturalPerson" name="personLoginType"
+                               ng-model="viewModel.personLoginType" value="1" />
+                        <label class="control-label cursor-pointer font-yekan-bold font-size-14" for="rdbNaturalPerson">
+                            شخص حقیقی
+                        </label>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12 pull-right" ng-if="viewModel.isSelectLegalPerson">
+                        <input type="radio" id="rdbLegalPerson" name="personLoginType"
+                               ng-model="viewModel.personLoginType" value="2" />
+                        <label class="control-label cursor-pointer font-yekan-bold font-size-14" for="rdbLegalPerson">
+                            شخص حقوقی
+                        </label>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12 pull-right" ng-if="viewModel.isSelectJudPerson">
+                        <input type="radio" id="rdbJudicialPerson" name="personLoginType"
+                               ng-model="viewModel.personLoginType" value="3" />
+                        <label class="control-label cursor-pointer font-yekan-bold font-size-14" for="rdbJudicialPerson">
+                            سمت قضایی
+                        </label>
+                    </div>
+                    <br ng-if="viewModel.isSelectNaturalPerson==true || viewModel.isSelectLegalPerson==true || viewModel.isSelectJudPerson==true" />
+                    <hr ng-if="viewModel.isSelectNaturalPerson==true || viewModel.isSelectLegalPerson==true || viewModel.isSelectJudPerson==true" />
+                    <div class="row row-no-padding">
+                        <div class="col-md-12 col-sm-12 hidden-xs">
+                            <div class="box-pattern warning">
+                                <div class="pattern-title">مراجعه کننده محترم</div>
+                                <br />
+                                <ul class="line-height-30 font-yekan font-size-12">
+                                    <li>
+                                        جهت استفاده از این خدمت ابتدا باید در سامانه ثنا (ثبت نام الکترونیک) ثبت نام نمائید.
+                                    </li>
+                                    <li>
+                                        جهت ثبت نام در مراکز استان ها به دفاتر خدمات الکترونیک قضایی و در سایر شهرستان ها به دادگستری مربوطه مراجعه نمایید .
+                                    </li>
+                                    <li>
+                                        برای سهولت امر، می توانید قبل از مراجعه حضوری، از <a href="http://sana.adliran.ir" class="color-red font-weight-bold" tooltip-placement="top" tooltip="ثبت نام الکترونیک" target="_blank">اینجا</a> نسبت به ثبت اطلاعات اولیه خود اقدام کنید.
+                                    </li>
+                                    <li ng-if="viewModel.isNoticeService">
+                                        مطابق ماده 13 آیین نامه نحوه استفاده از سامانه های رایانه ای یا مخابراتی وصول الکترونیکی اوراق قضایی به حساب کاربری مخاطب،ابلاغ محسوب می‌شود لذا به لحاظ اختلال احتمالی در ارسال پیامک،به طور متناوب حساب کاربری خود را مشاهده نمائید.
+                                    </li>
+                                    <li ng-if="viewModel.isNoticeService">
+                                        با توجه به اینکه متن ابلاغیه ها بصورت pdf است ، باید نرم افزاری که قابلیت نمایش pdf را دارد مثل  (<span class="color-red font-weight-bold">Adobe Acrobat Reader</span>) بر روی سیستم شما نصب شده باشد.
+                                    </li>
+                                    <li ng-if="viewModel.isNoticeService">
+                                        سامانه ابلاغ از طریق آدرس های زیر قابل دسترس است که در صورت کندی یا اختلال می توان از آن استفاده کرد .
+                                        <br />
+                                        <div class="margin-bottom-15 margin-top-5 font-yekan font-weight-bold font-size-13">
+                                            <div class="row row-no-padding">
+                                                <div class="col-md-2 col-sm-2 col-xs-12 pull-right">
+                                                    <i class="glyphicon glyphicon-ok padding-right-15 font-size-10 color-brown"></i>
+                                                    <a href="https://eblagh.adliran.ir/Dashboard/NoticeIndex">لینک 1</a>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-12 pull-right">
+                                                    <i class="glyphicon glyphicon-ok padding-right-15 font-size-10 color-brown"></i>
+                                                    <a href="https://eblagh1.adliran.ir/Dashboard/NoticeIndex">لینک 2</a>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-12 pull-right">
+                                                    <i class="glyphicon glyphicon-ok padding-right-15 font-size-10 color-brown"></i>
+                                                    <a href="https://eblagh2.adliran.ir/Dashboard/NoticeIndex">لینک 3</a>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-12 pull-right">
+                                                    <i class="glyphicon glyphicon-ok padding-right-15 font-size-10 color-brown"></i>
+                                                    <a href="https://eblagh3.adliran.ir/Dashboard/NoticeIndex1">لینک 4</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li ng-if="viewModel.isNoticeService" class="color-red font-weight-bold">
+                                        <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
+                                            <i class="glyphicon glyphicon-ok padding-right-15 font-size-10 color-brown"></i>
+                                            <a href="https://eadl.ir/%D8%B9%D8%AF%D8%A7%D9%84%D8%AA-%D9%87%D9%85%D8%B1%D8%A7%D9%87"> دانلود اپلیکیشن عدالت همراه</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-no-padding">
+                        <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                            <!--شخص حقیقی-->
+                            <div ng-if="viewModel.personLoginType==1">
+                                <div class="row row-no-padding">
+                                    <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                        <label id="lblPersonNationalCode" for="personNationalCode" class="control-label pull-left">
+                                            شماره ملی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                        <label id="lblPersonNationalCode" for="personNationalCode" class="control-label pull-right text-right">
+                                            شماره ملی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                        <div class="element-back blue">
+                                            <div class="input-group" dir="ltr">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input id="personNationalCode" name="personNationalCode" type="text"
+                                                       autofocus="autofocus" focus-if="1==1"
+                                                       class="form-control font-size-13 text-left font-yekan-number"
+                                                       autocomplete="off" lang="en"
+                                                       maxLength="10" ng-maxLength="10" ng-minLength="10"
+                                                       ng-model="login.nationalityCode">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-no-padding">
+                                    <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                        <label id="lblPersonUserPassword" for="personUserPassword" class="control-label pull-left">
+                                            رمز شخصی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                        <label id="lblPersonUserPassword" for="personUserPassword" class="control-label text-right pull-right">
+                                            رمز شخصی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                        <div class="element-back blue">
+                                            <div class="input-group" dir="ltr">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <input id="personUserPassword" name="personUserPassword" type="password"
+                                                       autocomplete="off" focus-if="login.nationalityCode.length==10" lang="en"
+                                                       class="form-control font-size-12 text-left"
+                                                       ng-model="login.userPassword" placeholder="رمز شخصی در سامانه ثبت نام">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--شخص حقوقی-->
+                            <div ng-if="viewModel.personLoginType==2">
+                                <div class="row row-no-padding">
+                                    <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                        <label id="lblLegalNationalCode" for="legalNationalCode" class="control-label pull-left">
+                                            شماره ملی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                        <label id="lblLegalNationalCode" for="legalNationalCode" class="control-label text-right pull-right">
+                                            شماره ملی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                        <div class="element-back blue">
+                                            <div class="input-group" dir="ltr">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input id="legalNationalCode" name="legalNationalCode" type="text"
+                                                       class="form-control font-size-13 text-left font-yekan-number"
+                                                       autocomplete="off" lang="en"
+                                                       maxLength="10" ng-maxLength="10" ng-minLength="10"
+                                                       ng-model="login.nationalityCode">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-no-padding">
+                                    <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                        <label id="lblLegalUserPassword" for="legalUserPassword" class="control-label pull-left">
+                                            رمز شخصی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                        <label id="lblLegalUserPassword" for="legalUserPassword" class="control-label text-right pull-right">
+                                            رمز شخصی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                        <div class="element-back blue">
+                                            <div class="input-group" dir="ltr">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <input id="legalUserPassword" name="legalUserPassword" type="password"
+                                                       autocomplete="off" focus-if="login.nationalityCode.length==10"
+                                                       class="form-control font-size-13 text-left" lang="en"
+                                                       ng-model="login.userPassword" placeholder="رمز شخص حقیقی در سامانه ثبت نام">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-no-padding">
+                                    <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                        <label id="lblLegalIdentity" for="legalIdentity" class="control-label pull-left">
+                                            شناسه حقوقی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                        <label id="lblLegalIdentity" for="legalIdentity" class="control-label text-right pull-right">
+                                            شناسه حقوقی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                        <div class="element-back blue">
+                                            <div class="input-group" dir="ltr">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                                <input id="legalIdentity" name="legalIdentity" type="text"
+                                                       class="form-control font-size-13 text-left font-yekan-number"
+                                                       maxlength="11" ng-maxLength="11" ng-minlength="11" lang="en"
+                                                       ng-model="login.legalIdentity">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--سمت قضایی-->
+                            <div ng-if="viewModel.personLoginType==3">
+                                <div class="row row-no-padding">
+                                    <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                        <label id="lblPersonNationalCode" for="personNationalCode" class="control-label pull-left">
+                                            شماره ملی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                        <label id="lblPersonNationalCode" for="personNationalCode" class="control-label pull-left">
+                                            شماره ملی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                        <div class="element-back blue">
+                                            <div class="input-group" dir="ltr">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input id="personNationalCode" name="personNationalCode" type="text"
+                                                       autofocus="autofocus" focus-if="1==1" lang="en"
+                                                       class="form-control font-size-13 text-left font-yekan-number"
+                                                       autocomplete="off" maxLength="10" ng-maxLength="10" ng-minLength="10"
+                                                       ng-model="login.nationalityCode">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-no-padding">
+                                    <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                        <label id="lblPersonUserPassword" for="personUserPassword" class="control-label pull-left">
+                                            رمز شخصی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                        <label id="lblPersonUserPassword" for="lblPersonUserPassword" class="control-label text-right pull-right">
+                                            رمز شخصی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                        <div class="element-back blue">
+                                            <div class="input-group" dir="ltr">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <input id="personUserPassword" name="personUserPassword" type="password"
+                                                       autocomplete="off" focus-if="login.nationalityCode.length==10"
+                                                       class="form-control font-size-13 text-left" lang="en"
+                                                       ng-model="login.userPassword" placeholder="رمز شخصی در سامانه ثبت نام">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-no-padding" ng-if="!viewModel.isNoticeService">
+                                    <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                        <label id="lblPersonUnitCode" for="personUnitCode" class="control-label pull-left">
+                                            کد واحد قضایی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                        <label id="lblPersonUnitCode" for="personUnitCode" class="control-label text-right pull-right">
+                                            کد واحد قضایی
+                                            <span class="star">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                        <div class="element-back blue">
+                                            <div class="input-group" dir="ltr">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
+                                                <input id="personUnitCode" name="personUnitCode" type="text"
+                                                       autocomplete="off" lang="en"
+                                                       class="form-control font-size-12 text-left font-yekan-number"                                                       
+                                                       maxlength="6" ng-maxLength="6" ng-model="login.unitCode">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-no-padding" ng-if="viewModel.countLogin >=2">
+                                <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                    <label id="lblCaptcha" for="captcha" class="control-label pull-left">
+                                        عدد تصویر زیر
+                                        <span class="star">*</span>
+                                    </label>
+                                </div>
+                                <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                    <label id="lblCaptcha" for="captcha" class="control-label text-right pull-right">
+                                        عدد تصویر زیر
+                                        <span class="star">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                    <div class="element-back blue margin-bottom-5">
+                                        <div class="input-group" dir="ltr">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                            <input id="captcha" name="captcha" type="text" lang="en"
+                                                   class="form-control font-size-13 text-left font-yekan-number"
+                                                   ng-model="login.captchaValueFirst" autocomplete="off"
+                                                   ng-maxlength="5" ng-minlength="5" maxlength="5">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-no-padding" ng-if="viewModel.countLogin >=2">
+                                <div class="col-md-6 col-sm-6 col-md-offset-right-3 col-sm-offset-right-3 col-xs-12 pull-right">
+                                    <div class="element-back blue pull-right width-full">
+                                        <img alt="captchaImage" id="captchaImage" height="50" class="width-full" ng-src="{{viewModel.captchaImage}}" />
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 hidden-xs pull-right">
+                                    <div class="element-back blue pull-right">
+                                        <button class="btn btn-warning"
+                                                tooltip-placement="top" tooltip="تصویر جدید"
+                                                ng-disabled="viewModel.loadingLogin"
+                                                ng-click="actions.refreshCaptcha()">
+                                            <i class="glyphicon glyphicon-refresh"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                    <div class="element-back blue pull-right width-full">
+                                        <button class="btn btn-warning btn-block"
+                                                tooltip-placement="top" tooltip="تصویر جدید"
+                                                ng-disabled="viewModel.loadingLogin"
+                                                ng-click="actions.refreshCaptcha()">
+                                            بازیابی تصویر جدید
+                                            <i class="glyphicon glyphicon-refresh"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-no-padding">
+                                <div class="col-md-6 col-sm-6 col-xs-12 pull-right col-md-offset-right-3 col-sm-offset-right-3">
+                                    <div class="element-back yellow pull-right width-full">
+                                        <button class="btn btn-info btn-block font-size-12 font-yekan"
+                                                focus-if="login.captchaValueFirst.length==5"
+                                                ng-disabled="viewModel.loading"
+                                                ng-click="actions.checkPersonLogin()">
+                                            <span ng-if="!viewModel.loading">
+                                                مرحله بعد
+                                                <i class="glyphicon glyphicon-chevron-left margin-right-5"></i>
+                                            </span>
+                                            <div class="spinner-login" ng-if="viewModel.loading"></div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-no-padding">
+                                <div class="col-md-9 col-sm-9 col-xs-12 pull-right col-md-offset-right-3 col-sm-offset-right-3">
+                                    <ul class="list-style-none font-yekan font-size-13 margin-top-20 no-padding">
+                                        <li class="margin-top-5 color-gray">
+                                            <a href="/Login/ChangePassword?returnUrl={{viewModel.returnUrl}}&systemName={{viewModel.systemName}}&loginType={{viewModel.loginType}}&isExternal={{viewModel.isExternal}}&isSelectNaturalPerson={{viewModel.isSelectNaturalPerson}}&isSelectLegalPerson={{viewModel.isSelectLegalPerson}}&isSelectJudPerson={{viewModel.isSelectJudPerson}}&messageUrl={{viewModel.messageUrl}}&loginTitle={{viewModel.loginTitle}}">
+                                                <i class="glyphicon glyphicon-hand-left margin-left-5"></i>
+                                                رمز عبور خود را فراموش کرده ام !
+                                            </a>
+                                        </li>
+                                        <li class="margin-top-10 color-gray">
+                                            <i class="glyphicon glyphicon-hand-left margin-left-5"></i>
+                                            <a href="http://sana.adliran.ir/sana/index" target="_blank">من در این سایت ثبت نام نکرده ام .</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 hidden-xs pull-left">
+                            <ul class="list-style-none font-yekan-bold font-size-12 no-padding no-margin line-height-35">
+                                <li>
+                                    <img src="/Bundles/images/login/wireless.png" alt="ورود در مکان عمومی" />
+                                    در محل های عمومی سعی کنید وارد سامانه نشوید.
+                                </li>
+                                <li>
+                                    <img src="/Bundles/images/login/globe.png" alt="آدرس نامعتبر" />
+                                    آدرس هایی غیر از URL سامانه ، نامعتبر هستند.
+                                </li>
+                                <li>
+                                    <img src="/Bundles/images/login/search.png" alt="مرورگرهای بروز" />
+                                    از مرورگر مطمئن و بروز <span class="color-red font-weight-bold font-tahoma">Google Chrome</span> استفاده نمایید.
+                                </li>
+                                <li>
+                                    <img src="/Bundles/images/login/security.png" alt="کلمه کاربری" />
+                                    کلمه ی کاربری و رمز خود را در جای امن ذخیره نمایید.
+                                </li>
+                                <li class="padding-bottom-5">
+                                    <img src="/Bundles/images/login/logoff.png" alt="خروج از سیستم" />
+                                    پس از انجام و اتمام کار، حتما از سامانه خارج شوید.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+<form name="frmCheckOTP" id="frmCheckOTP" class="form-horizontal" role="form" ng-keypress="actions.preventEnterKey($event,2)" novalidate jud-validator ng-if="viewModel.loginStep==2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                ورود به {{viewModel.loginTitle}} - مرحله ی دوم
+            </li>
+        </ol>
+    </nav>
+    <section class="container login-effect">
+        <div class="row row-no-padding">
+            <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1">
+                <div class="bg-light-default padding-10 border-radius-10 margin-top-15">
+                    <div class="triangle-up default"></div>
+                    <br />
+                    <div class="row row-no-padding">
+                        <div class="col-md-5 col-sm-5 col-xs-12 pull-right">
+                            <div class="row row-no-padding">
+                                <div class="col-md-3 col-sm-3 hidden-xs pull-right">
+                                    <label id="lblOtpPassword" for="otpPassword" class="control-label pull-left">
+                                        رمز موقت
+                                        <span class="star">*</span>
+                                    </label>
+                                </div>
+                                <div class="hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+                                    <label id="lblOtpPassword" for="otpPassword" class="control-label text-right pull-right">
+                                        رمز موقت
+                                        <span class="star">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-7 col-sm-7 col-xs-12 pull-right">
+                                    <div class="element-back blue">
+                                        <div class="input-group" dir="ltr">
+                                            <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                                            <input id="txtOtpPassword" name="txtOtpPassword" type="password"
+                                                   focus-if="1==1" lang="en"
+                                                   autocomplete="off" autofocus="autofocus"
+                                                   class="form-control font-yekan-number font-size-13 text-left" 
+                                                   ng-model="login.otpPassword">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-no-padding">
+                                <div class="col-md-7 col-sm-7 col-xs-12 pull-right col-md-offset-right-3 col-sm-offset-right-3">
+                                    <div class="element-back yellow pull-right width-full">
+                                        <button id="btnOtpPassword" name="btnOtpPassword" class="btn btn-info btn-block font-size-12 font-yekan"
+                                                ng-disabled="viewModel.loading || viewModel.isSendingOtpPassword"
+                                                ng-click="actions.checkPersonOtpLogin()">
+                                            <span ng-if="!viewModel.loading">
+                                                <i class="glyphicon glyphicon-log-in margin-left-5"></i>
+                                                ورود
+                                            </span>
+                                            <div class="spinner-login" ng-if="viewModel.loading"></div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-no-padding">
+                                <div class="col-md-7 col-sm-7 col-xs-12 pull-right col-md-offset-right-3 col-sm-offset-right-3">
+                                    <div class="element-back yellow pull-right width-full">
+                                        <button class="btn btn-default btn-block font-size-12 font-yekan"
+                                                ng-click="viewModel.loginStep=1"
+                                                ng-disabled="viewModel.loadingLogout || viewModel.loading || viewModel.isSendingOtpPassword">
+                                            <i class="glyphicon glyphicon-chevron-right margin-left-5"></i>
+                                            مرحله ی قبل
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-no-padding">
+                                <div class="col-md-7 col-sm-7 col-xs-12 pull-right col-md-offset-right-3 col-sm-offset-right-3">
+                                    <div class="element-back yellow pull-right width-full">
+                                        <button ng-click="actions.sendOtpPasswordForPerson()"
+                                                class="btn btn-primary btn-block"
+                                                ng-disabled="viewModel.isSendingOtpPassword || viewModel.loading">
+                                            <span ng-if="!viewModel.isSendingOtpPassword" class="font-size-12 font-yekan">
+                                                <i class="fa fa-retweet"></i>
+                                                ارسال مجدد رمز موقت
+                                            </span>
+                                            <div ng-if="viewModel.isSendingOtpPassword" class="spinner-login"></div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 hidden-xs pull-left">
+                            <ul class="list-style-none font-yekan-bold font-size-12 no-padding no-margin line-height-35">
+                                <li>
+                                    <img src="/Bundles/images/login/lock.png" alt="رمز موقت" />
+                                    رمز موقتی که به تلفن همراه شما پیامک شده را در کادر مربوطه وارد نمایید .
+                                </li>
+                                <li>
+                                    <img src="/Bundles/images/login/search.png" alt="مفقود شدن رمز موقت" />
+                                    در صورت مفقود شدن رمز موقت از گزینه ی ارسال مجدد رمز ، می توانید بازیابی نمایید.
+                                </li>
+                                <li>
+                                    <img src="/Bundles/images/login/security.png" alt="بازیابی رمز موقت" />
+                                    بعد از بازیابی ، رمز موقت به تلفن همراه شما پیامک می شود.
+                                </li>
+                                <li>
+                                    <img src="/Bundles/images/login/globe.png" alt="بازیابی رمز موقت" />
+                                    شما می توانید از طریق سامانه پیامکی ، رمز موقت دلخواه خود را تعیین کنید.
+                                    <ul>
+                                        <li>
+                                            ارسال
+                                            <span class="color-red font-yekan-number margin-left-10 margin-right-10 font-size-12 font-weight-bold pull-left">رمز پنج رقمی دلخواه <span class="color-green">#</span> شماره ملی <span class="color-green">#</span> 5</span>
+                                        </li>
+                                        <li>
+                                            به شماره
+                                            <span class="color-red font-yekan-number margin-left-10 margin-right-10 font-size-12 font-weight-bold pull-left">1000491</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+<form name="frmSelectRole" id="frmSelectRole" class="form-horizontal" role="form" ng-keypress="actions.preventEnterKey($event,3)" novalidate jud-validator ng-if="viewModel.loginStep==3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                ورود به {{viewModel.loginTitle}} - مرحله ی سوم
+            </li>
+        </ol>
+    </nav>
+    <section class="container login-effect">
+        <div class="row row-no-padding">
+            <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1">
+                <div class="bg-light-default padding-10 border-radius-10 margin-top-15">
+                    <div class="triangle-up default"></div>
+                    <br />
+                    <div class="row row-no-padding">
+                        <div class="col-md-7 col-sm-7 col-xs-12 pull-right">
+                            <div class="row row-no-padding">
+                                <div class="col-md-12 col-sm-10 col-xs-12">
+                                    <label>
+                                        از فهرست سمت ها یکی را انتخاب و وارد سامانه شوید :
+                                    </label>
+                                    <div class="element-back blue">
+                                        <multiselect class="input-xlarge font-yekan"
+                                                     theme="default"
+                                                     disabled="viewModel.loading"
+                                                     ng-model="viewModel.personRole"
+                                                     options="c.SignText for c in viewModel.thePersonRoleList"
+                                                     change="angular.noop">
+                                        </multiselect>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-no-padding">
+                                <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                    <div class="element-back yellow pull-right width-full font-yekan">
+                                        <button class="btn btn-success btn-block font-size-13" id="btnLogin"
+                                                ng-disabled="viewModel.loading"
+                                                ng-click="actions.setTokenToBeActivate(viewModel.personRole)">
+                                            <span ng-if="!viewModel.loading">
+                                                <i class="glyphicon glyphicon-ok margin-left-5"></i>
+                                                تایید سمت و ورود به سامانه
+                                            </span>
+                                            <div class="spinner-login" ng-if="viewModel.loading"></div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-no-padding">
+                                <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                                    <div class="element-back yellow pull-right width-full font-yekan">
+                                        <button class="btn btn-default btn-block font-size-13"
+                                                ng-disabled="viewModel.loading"
+                                                ng-click="viewModel.loginStep=1">
+                                            <i class="glyphicon glyphicon-chevron-right margin-left-5"></i>
+                                            مرحله ی اول ورود به سامانه
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 hidden-xs pull-left">
+                            <ul class="list-style-none font-yekan-bold font-size-12 no-padding no-margin line-height-35">
+                                <li>
+                                    <i class="glyphicon glyphicon-hand-left color-red margin-left-10 font-size-13"></i>
+                                    کاربر گرامی در صورتی که لیست سمت ها خالی بود وارد مرحله ی اول ورود به سامانه شوید .
+                                </li>
+                                <li>
+                                    <i class="glyphicon glyphicon-hand-left color-red margin-left-10 font-size-13"></i>
+                                    در این مرحله، هیچگاه کلید <span class="font-tahoma font-size-13 color-red">F5</span> صفحه کلید را نزنید در غیر اینصورت وارد مرحله ی اول ورود به سامانه می شوید .
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+<div id="infoModal" class="modal fade" role="dialog" data-backdrop="static" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row row-no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="box-pattern no-margin padding-5 background-skysilver">
+                            <div ng-bind-html="viewModel.infoMessage" class="white-space-pre-line line-height-30 ng-binding font-yekan font-size-14"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer padding-3">
+                <div class="row row-no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                        <button type="button" class="btn btn-success font-yekan"
+                                ng-click="actions.verifyOTPMessage()">
+                            متوجه شدم
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
