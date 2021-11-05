@@ -15,10 +15,10 @@ namespace proje_1.Models
         {
         }
 
-        public virtual DbSet<Dadkhast> Dadkhast { get; set; }
+        public virtual DbSet<Dadkhast1> Dadkhast1 { get; set; }
         public virtual DbSet<JobType> JobType { get; set; }
-        public virtual DbSet<SabtSana> SabtSana { get; set; }
-        public virtual DbSet<Shekvaye> Shekvaye { get; set; }
+        public virtual DbSet<SabtSana1> SabtSana1 { get; set; }
+        public virtual DbSet<Shekvaye1> Shekvaye1 { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,62 +31,79 @@ namespace proje_1.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Dadkhast>(entity =>
+            modelBuilder.Entity<Dadkhast1>(entity =>
             {
                 entity.HasKey(e => e.CodeDadkhast);
 
                 entity.Property(e => e.CodeDadkhast)
                     .HasColumnName("Code dadkhast")
+                    .HasMaxLength(10)
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.IdKhahan).HasColumnName("ID khahan");
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
-                entity.Property(e => e.IdKhande).HasColumnName("ID khande");
-
-                entity.Property(e => e.IdMotale).HasColumnName("ID motale");
-
-                entity.Property(e => e.IdVakil).HasColumnName("ID vakil]");
-
-                entity.Property(e => e.Idnamayande).HasColumnName("IDnamayande]");
-
-                entity.Property(e => e.Khasteh)
-                    .IsRequired()
-                    .HasMaxLength(150);
+                entity.Property(e => e.Khasteh).IsRequired();
 
                 entity.Property(e => e.Mojavez).IsRequired();
+
+                entity.Property(e => e.NationalcodeKhahan)
+                    .IsRequired()
+                    .HasColumnName("Nationalcode KHahan")
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.NationalcodeKhande)
+                    .IsRequired()
+                    .HasColumnName("Nationalcode KHande")
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.NationalcodeMotale)
+                    .IsRequired()
+                    .HasColumnName("Nationalcode motale")
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.NationalcodeNamayande)
+                    .IsRequired()
+                    .HasColumnName("Nationalcode namayande")
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.NationalcodeVakil)
+                    .IsRequired()
+                    .HasColumnName("Nationalcode vakil")
+                    .HasMaxLength(10);
 
                 entity.Property(e => e.SharheDadkhast)
                     .IsRequired()
                     .HasColumnName("Sharhe dadkhast");
 
-                entity.HasOne(d => d.IdKhahanNavigation)
-                    .WithMany(p => p.DadkhastIdKhahanNavigation)
-                    .HasForeignKey(d => d.IdKhahan)
+                entity.HasOne(d => d.NationalcodeKhahanNavigation)
+                    .WithMany(p => p.Dadkhast1NationalcodeKhahanNavigation)
+                    .HasForeignKey(d => d.NationalcodeKhahan)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Dadkhast_Sana");
+                    .HasConstraintName("FK_Dadkhast1_SabtSana1");
 
-                entity.HasOne(d => d.IdKhandeNavigation)
-                    .WithMany(p => p.DadkhastIdKhandeNavigation)
-                    .HasForeignKey(d => d.IdKhande)
+                entity.HasOne(d => d.NationalcodeKhandeNavigation)
+                    .WithMany(p => p.Dadkhast1NationalcodeKhandeNavigation)
+                    .HasForeignKey(d => d.NationalcodeKhande)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Dadkhast_Sana1");
+                    .HasConstraintName("FK_Dadkhast1_SabtSana11");
 
-                entity.HasOne(d => d.IdMotaleNavigation)
-                    .WithMany(p => p.DadkhastIdMotaleNavigation)
-                    .HasForeignKey(d => d.IdMotale)
+                entity.HasOne(d => d.NationalcodeMotaleNavigation)
+                    .WithMany(p => p.Dadkhast1NationalcodeMotaleNavigation)
+                    .HasForeignKey(d => d.NationalcodeMotale)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Dadkhast_Sana2");
+                    .HasConstraintName("FK_Dadkhast1_SabtSana12");
 
-                entity.HasOne(d => d.IdVakilNavigation)
-                    .WithMany(p => p.DadkhastIdVakilNavigation)
-                    .HasForeignKey(d => d.IdVakil)
+                entity.HasOne(d => d.NationalcodeNamayandeNavigation)
+                    .WithMany(p => p.Dadkhast1NationalcodeNamayandeNavigation)
+                    .HasForeignKey(d => d.NationalcodeNamayande)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Dadkhast_Sana3");
+                    .HasConstraintName("FK_Dadkhast1_SabtSana14");
 
-                entity.HasOne(d => d.IdnamayandeNavigation)
-                    .WithMany(p => p.DadkhastIdnamayandeNavigation)
-                    .HasForeignKey(d => d.Idnamayande)
-                    .HasConstraintName("FK_Dadkhast_Sana4");
+                entity.HasOne(d => d.NationalcodeVakilNavigation)
+                    .WithMany(p => p.Dadkhast1NationalcodeVakilNavigation)
+                    .HasForeignKey(d => d.NationalcodeVakil)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Dadkhast1_SabtSana15");
             });
 
             modelBuilder.Entity<JobType>(entity =>
@@ -101,111 +118,140 @@ namespace proje_1.Models
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<SabtSana>(entity =>
+            modelBuilder.Entity<SabtSana1>(entity =>
             {
-                entity.ToTable("Sabt Sana");
+                entity.HasKey(e => e.NationalCode);
 
-                entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.NationalCode)
+                    .HasColumnName("National code")
+                    .HasMaxLength(10)
+                    .ValueGeneratedNever();
 
                 entity.Property(e => e.Address).IsRequired();
+
+                entity.Property(e => e.City)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DateOfBirth)
                     .IsRequired()
                     .HasColumnName("Date of Birth")
                     .HasMaxLength(10);
 
-                entity.Property(e => e.Email).HasMaxLength(50);
+                entity.Property(e => e.Email).HasMaxLength(100);
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Job)
                     .IsRequired()
+                    .HasColumnName("job")
                     .HasMaxLength(100);
 
                 entity.Property(e => e.JobTypeId).HasColumnName("Job Type ID");
 
-                entity.Property(e => e.LastName)
+                entity.Property(e => e.Lname)
                     .IsRequired()
-                    .HasColumnName("Last name")
                     .HasMaxLength(50);
 
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.NationalCode)
+                entity.Property(e => e.NamePdar)
                     .IsRequired()
-                    .HasColumnName("National Code")
-                    .HasMaxLength(10);
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.RandomCode).HasColumnName("Random code");
+                entity.Property(e => e.RandomCode)
+                    .HasColumnName("Random Code")
+                    .HasMaxLength(5);
 
                 entity.Property(e => e.ShomareSh)
                     .IsRequired()
-                    .HasColumnName("Shomare SH")
+                    .HasColumnName("SHomare SH")
                     .HasMaxLength(10);
 
-                entity.HasOne(d => d.IdNavigation)
-                    .WithOne(p => p.SabtSana)
-                    .HasForeignKey<SabtSana>(d => d.Id)
+                entity.HasOne(d => d.JobType)
+                    .WithMany(p => p.SabtSana1)
+                    .HasForeignKey(d => d.JobTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Sabt Sana_Job Type");
+                    .HasConstraintName("FK_SabtSana1_Job Type");
             });
 
-            modelBuilder.Entity<Shekvaye>(entity =>
+            modelBuilder.Entity<Shekvaye1>(entity =>
             {
                 entity.HasKey(e => e.CodeShekvaye);
 
+                entity.ToTable("SHekvaye1");
+
                 entity.Property(e => e.CodeShekvaye)
                     .HasColumnName("Code shekvaye")
+                    .HasMaxLength(10)
                     .ValueGeneratedNever();
-
-                entity.Property(e => e.IdKhahan).HasColumnName("ID khahan");
-
-                entity.Property(e => e.IdKhande).HasColumnName("ID khande");
-
-                entity.Property(e => e.IdMatale).HasColumnName("ID matale");
-
-                entity.Property(e => e.IdNamayandeh).HasColumnName("ID namayandeh");
-
-                entity.Property(e => e.IdVakil).HasColumnName("ID vakil");
 
                 entity.Property(e => e.Mojavez).IsRequired();
 
                 entity.Property(e => e.Mozoe).IsRequired();
 
+                entity.Property(e => e.NationalcodeKhahan)
+                    .IsRequired()
+                    .HasColumnName("Nationalcode KHahan")
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.NationalcodeKhande)
+                    .IsRequired()
+                    .HasColumnName("[Nationalcode KHande")
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.NationalcodeMotale)
+                    .IsRequired()
+                    .HasColumnName("Nationalcode motale")
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.NationalcodeNamayande)
+                    .IsRequired()
+                    .HasColumnName("Nationalcode namayande")
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.NationalcodeVakil)
+                    .IsRequired()
+                    .HasColumnName("Nationalcode vakil")
+                    .HasMaxLength(10);
+
                 entity.Property(e => e.SharhShekayat)
                     .IsRequired()
-                    .HasColumnName("Sharh shekayat]");
+                    .HasColumnName("Sharh shekayat");
 
-                entity.HasOne(d => d.IdKhahanNavigation)
-                    .WithMany(p => p.ShekvayeIdKhahanNavigation)
-                    .HasForeignKey(d => d.IdKhahan)
+                entity.HasOne(d => d.NationalcodeKhahanNavigation)
+                    .WithMany(p => p.Shekvaye1NationalcodeKhahanNavigation)
+                    .HasForeignKey(d => d.NationalcodeKhahan)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Shekvaye_Sabt Sana");
+                    .HasConstraintName("FK_SHekvaye1_SabtSana1");
 
-                entity.HasOne(d => d.IdKhandeNavigation)
-                    .WithMany(p => p.ShekvayeIdKhandeNavigation)
-                    .HasForeignKey(d => d.IdKhande)
+                entity.HasOne(d => d.NationalcodeKhandeNavigation)
+                    .WithMany(p => p.Shekvaye1NationalcodeKhandeNavigation)
+                    .HasForeignKey(d => d.NationalcodeKhande)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Shekvaye_Sabt Sana1");
+                    .HasConstraintName("FK_SHekvaye1_SabtSana11");
 
-                entity.HasOne(d => d.IdMataleNavigation)
-                    .WithMany(p => p.ShekvayeIdMataleNavigation)
-                    .HasForeignKey(d => d.IdMatale)
+                entity.HasOne(d => d.NationalcodeMotaleNavigation)
+                    .WithMany(p => p.Shekvaye1NationalcodeMotaleNavigation)
+                    .HasForeignKey(d => d.NationalcodeMotale)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Shekvaye_Sabt Sana2");
+                    .HasConstraintName("FK_SHekvaye1_SabtSana12");
 
-                entity.HasOne(d => d.IdNamayandehNavigation)
-                    .WithMany(p => p.ShekvayeIdNamayandehNavigation)
-                    .HasForeignKey(d => d.IdNamayandeh)
-                    .HasConstraintName("FK_Shekvaye_Sabt Sana3");
-
-                entity.HasOne(d => d.IdVakilNavigation)
-                    .WithMany(p => p.ShekvayeIdVakilNavigation)
-                    .HasForeignKey(d => d.IdVakil)
+                entity.HasOne(d => d.NationalcodeNamayandeNavigation)
+                    .WithMany(p => p.Shekvaye1NationalcodeNamayandeNavigation)
+                    .HasForeignKey(d => d.NationalcodeNamayande)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Shekvaye_Sabt Sana4");
+                    .HasConstraintName("FK_SHekvaye1_SabtSana13");
+
+                entity.HasOne(d => d.NationalcodeVakilNavigation)
+                    .WithMany(p => p.Shekvaye1NationalcodeVakilNavigation)
+                    .HasForeignKey(d => d.NationalcodeVakil)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_SHekvaye1_SabtSana14");
             });
         }
     }

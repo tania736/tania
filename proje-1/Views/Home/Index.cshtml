@@ -1,37 +1,43 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  
-        <meta name="دفتر قضایی" content="width=device-width, initial-scale=5">
-        <h1 style="background-color:azure;">
+    <meta name="دفتر قضایی" content="width=device-width, initial-scale=5">
+    <h1 style="background-color:azure;">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/MyFont.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/Areset.css" rel="stylesheet">
+        <link href="css/Fontawesome.css" rel="stylesheet">
 
-            <style>
+        <style>
 
 
-                
 
-                div.scrollmenu {
-                    background-color: rgb(44, 58, 184);
-                    overflow: auto;
-                    white-space: nowrap;
+
+            div.scrollmenu {
+                background-color: rgb(44, 58, 184);
+                overflow: auto;
+                white-space: nowrap;
+            }
+
+                div.scrollmenu a {
+                    display: inline-block;
+                    color: white;
+                    text-align: right;
+                    padding: 14px;
+                    ;
+                    text-decoration: none;
                 }
 
-                    div.scrollmenu a {
-                        display: inline-block;
-                        color: white;
-                        text-align: right;
-                        padding: 14px;
-                        ;
-                        text-decoration: none;
+                    div.scrollmenu a:hover {
+                        background-color: rgb(206, 10, 4);
                     }
+        </style>
 
-                        div.scrollmenu a:hover {
-                            background-color: rgb(206, 10, 4);
-                        }
-            </style>
 </head>
+
 <body dir="rtl">
-    <form asp-controller="Home" asp-action="Authentication" method="index">
+    <form asp-controller="Home" asp-action="Authentication" metode="post">
         <div class="scrollmenu">
             <a href="test.html">صفحه نخست</a>
             <a href="darbare khadamat.html"> درباره خدمات الکترونیک</a>
@@ -46,16 +52,43 @@
 
         </div>
 
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="5.jpg " id="img-carousel" class="img-responsive">
+            </div>
+
+
+            <div class="item">
+                <img src="1.jpg" id="img-carousel" class="img-responsive">
+            </div>
+            <div class="item">
+                <img src="2.jpg" id="img-carousel" class="img-responsive">
+            </div>
+            <div class="item">
+                <img src="3.jpg" id="img-carousel" class="img-responsive">
+            </div>
+            <div class="item">
+                <img src="4.jpg" id="img-carousel" class="img-responsive">
+            </div>
+
+
+
+        </div>
+
+
 
         <div class="list">
 
             <br>  <a href="kartabl.html">  کارتابل خدمات قضایی</a></br>
-            <br> <a href="dadkhast.html">  ثبت و اصلاح دادخواست</a></br>
-            <br> <a href="shekvaeye.html">  ثبت و اصلاح شکواییه</a></br>
+            <br> <a href="/Dadkhast/Register">  ثبت  دادخواست</a></br>
+            <br> <a href="/SHekvaye/Register">  ثبت شکواییه</a></br>
             <br> <a href="pygiri dadkhast.html">  پیگیری دادخواست</a></br>
             <br> <a href="pygiri shkvaeye.html">    پیگیری شکواییه</a></br>
-
-            <br> <a href="sana.html">    ثبت نام حساب کاربری ثنا</a></br>
+            <br> <a href="/EditDadkhast/Register">  ویرایش و حذف دادخواست</a></br>
+            <br> <a href="/EditSHekvaye/Register">  ویرایش و حذف شکواییه</a></br>
+          
+     
+            <br> <a href="/SabtSana/Register">    ثبت نام حساب کاربری ثنا</a></br>
 
 
         </div>
@@ -68,13 +101,7 @@
             }
         </style>
 
-        <body>
 
-
-            </style>
-            </head>
-
-        </body>
 
         <style>
             * {
@@ -205,93 +232,99 @@
             {
                 font-size: 11px
             }
+
             }
-        </style>
-        </head>
-        <body>
-
-            <div class="slideshow-container">
-
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 5</div>
-                    <img src="1.jpg" style="width:fit-content">
-                    <div class="text">1</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 5</div>
-                    <img src="2.jpg" style="width:fit-content">
-                    <div class="text">2</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="numbertext">3 /5</div>
-                    <img src="4.jpg" style="width:fit-content">
-                    <div class="text">3</div>
-                </div>
-
-
-                <div class="mySlides fade">
-                    <div class="numbertext">4 /5</div>
-                    <img src="5.jpg" style="width:fit-content">
-                    <div class="text">4</div>
-                </div>
-
-
-                <div class="mySlides fade">
-                    <div class="numbertext">5 / 5</div>
-                    <img src="3.jpg" style="width:fit-content">
-                    <div class="text">5</div>
-                </div>
-
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-            </div>
-            <br>
-
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-            </div>
-
-            <script>
-                var slideIndex = 1;
-                showSlides(slideIndex);
-
-                function plusSlides(n) {
-                    showSlides(slideIndex += n);
-                }
-
-                function currentSlide(n) {
-                    showSlides(slideIndex = n);
-                }
-
-                function showSlides(n) {
-                    var i;
-                    var slides = document.getElementsByClassName("mySlides");
-                    var dots = document.getElementsByClassName("dot");
-                    if (n > slides.length) { slideIndex = 1 }
-                    if (n < 1) { slideIndex = slides.length }
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                    }
-                    for (i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                    }
-                    slides[slideIndex - 1].style.display = "block";
-                    dots[slideIndex - 1].className += " active";
-                }
-            </script>
-            </h1>
-    </form>
-    </body>
-
-</html>
 
 
 
+            <div class="slideshow-container" >
 
+            <div class="mySlides fade" >
+            <div class="numbertext" > 1 / 5</div >
+            <img src="1.jpg" style="width:fit-content" >
+            <div class="text" > 1</div >
+            </div >
+
+            <div class="mySlides fade" >
+            <div class="numbertext" > 2 / 5</div >
+            <img src="2.jpg" style="width:fit-content" >
+            <div class="text" > 2</div >
+            </div >
+
+            <div class="mySlides fade" >
+            <div class="numbertext" > 3 /5</div >
+            <img src="4.jpg" style="width:fit-content" >
+            <div class="text" > 3</div >
+            </div >
+
+
+            <div class="mySlides fade" >
+            <div class="numbertext" > 4 /5</div >
+            <img src="5.jpg" style="width:fit-content" >
+            <div class="text" > 4</div >
+            </div >
+
+
+            <div class="mySlides fade" >
+            <div class="numbertext" > 5 / 5</div >
+            <img src="3.jpg" style="width:fit-content" >
+            <div class="text" > 5</div >
+            </div >
+
+            <a class="prev" onclick="plusSlides(-1)" > &#10094;</a >
+            <a class="next" onclick="plusSlides(1)" > &#10095;</a >
+
+            </div >
+            <br >
+
+            <div style="text-align:center" >
+            <span class="dot" onclick="currentSlide(1)" > </span >
+            <span class="dot" onclick="currentSlide(2)" > </span >
+            <span class="dot" onclick="currentSlide(3)" > </span >
+            <span class="dot" onclick="currentSlide(4)" > </span >
+            <span class="dot" onclick="currentSlide(5)" > </span >
+            </div >
+
+            <script >
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length)
+
+            {
+                slideIndex = 1
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides [i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots [i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className + = " active";
+            }
+            </script >
+            </h1 >
+            </form >
+            </body >
+
+            </html >

@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewData["Title"] = "SHekvaye";
+}
+@model Shekvaye1;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم ثبت  شکواییه</title>
+</head>
+<body dir="rtl">
+    <h1 style="background-color:LightGray;">
+        <fieldset>
+            <legend>فرم ثبت  شکواییه </legend>
+            <form asp-controller="SHekvaye" asp-action="Authenticate" method="post">
+
+                <table width="450" border="0" align="center">
+                    <tr>
+                        <td width="150" align="left">
+                            خواهان :
+                        </td>
+                        <td>
+                            <input type="text"asp-for="NationalcodeKhahan" maxlength="10" size="20" placeholder="کدملی خواهان را وارد کنید">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="150" align="left">
+                            خوانده :
+                        </td>
+                        <td>
+                            <input type="text"asp-for="NationalcodeKhande" maxlength="10" size="20" placeholder="کدملی خوانده را وارد کنید">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td width="150" align="left">
+                            وکیل :
+                        </td>
+                        <td>
+                            <input type="text"asp-for="NationalcodeVakil" maxlength="10" size="20" placeholder="کدملی وکیل را وارد کنید">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="150" align="left">
+                            مطلع:
+                        </td>
+                        <td>
+                            <input type="text"asp-for="NationalcodeMotale" maxlength="10" size="20" placeholder="کدملی مطلع را وارد کنید">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="150" align="left">
+                            نماینده:
+                        </td>
+                        <td>
+                            <input type="text"asp-for="NationalcodeNamayande" maxlength="10" size="20" placeholder="کدملی نماینده را وارد کنید">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td width="150" align="left" valign="top">
+                            شرح  شکایت :
+                        </td>
+                        <td>
+                            <textarea rows="10" asp-for="SharhShekayat"cols="20"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="150" align="left" valign="top">
+                            مجوزهای خاص :
+                        </td>
+                        <td>
+                            <textarea rows="10"asp-for="Mojavez" cols="20"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="150" align="left">
+                           
+                                <label for="shekvaye">موضوع:</label>
+                                <select asp-for=" Mozoe" id="موضوع">
+                                    <option value="ضرب و جرح عمومی">ضرب و جرح عمومی</option>
+                                    <option value="توهین به اشخاص عادی">توهین به اشخاص عادی</option>
+                                    <option value="تهدید">تهدید</option>
+                                    <option value="افترا">افترا</option>
+                                    <option value="نشر اکاذیب">نشر اکاذیب</option>
+                                    <option value="حک با سیستم رایانه ای">حک با سیستم رایانه ای</option>
+                                    <option value="صدور چک بلامحل">صدور چک بلامحل</option>
+                                    <option value="خیانت در امانت خودرو">خیانت در امانت</option>
+                                    <option value="مزاحمت و سلب آسایش توسط همسایه">مزاحمت و سلب آسایش توسط همسایه</option>
+                                    <option value="خیانت در امانت سفته">خیانت در امانت سفته</option>
+                                </select>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="150" align="left">
+
+                            <input type="submit" value="جستجو"> :
+                        </td>
+                        <td>
+                            <input type="text" maxlength="10" size="20">
+                    <tr>
+
+                        </td>
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="ثبت اطلاعات">
+
+                            <input type="submit" value="ویرایش اطلاعات">
+                            <input type="submit" value="حذف اطلاعات">
+                            <input type="reset" value="پاک کردن فرم">
+
+                        </td>
+                    </tr>
+                </table>
+
+            </form>
+        </fieldset>
+    </h1>
+</body>
+</html>
+

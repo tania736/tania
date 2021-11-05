@@ -1,7 +1,8 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "ثبت ثنا";
 }
-@model SabtSana;
+@model SabtSana1;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
 <body dir="rtl">
     <fieldset>
         <legend> فرم ثبت نام ثنا</legend>
-        <form asp-controller="SabtSana" asp-action="sana" method="post">
+        <form asp-controller="SabtSana" asp-action="Authenticate" method="post">
 
             <table width="450" border="0" align="center">
 
@@ -32,11 +33,20 @@
                         نام خانوادگی :
                     </td>
                     <td>
-                        <input type="text" asp-for="LastName" maxlength="10" size="20" placeholder="نام خانوادگی خود را وارد کنید">
+                        <input type="text" asp-for="Lname" maxlength="10" size="20" placeholder="نام خانوادگی خود را وارد کنید">
                     </td>
                 </tr>
 
-
+                <tr>
+                    <td width="150" align="left">
+                        نام پدر :
+                    </td>
+                    <td>
+                        <input type="text" asp-for="NamePdar" maxlength="10" size="20" placeholder="نام پدر خود را وارد کنید">
+                    </td>
+                </tr>
+               
+                
                 <tr>
                     <td width="150" align="left">
                         شماره شناسنامه :
@@ -66,7 +76,7 @@
                         محل تولد :
                     </td>
                     <td>
-                        <input type="text" asp-for="city" maxlength="10" size="20" placeholder="محل تولد خود را وارد کنید">
+                        <input type="text" asp-for="City" maxlength="10" size="20" placeholder="محل تولد خود را وارد کنید">
                     </td>
                 </tr>
                 <tr>
