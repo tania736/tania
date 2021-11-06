@@ -19,7 +19,7 @@ namespace proje_1.Controllers
 
         [HttpPost]
         public ActionResult Index(string searchString)
-
+             
         {
             Models.projeContext db = new Models.projeContext();
             Models.Dadkhast1 tbl3 = new Models.Dadkhast1();
